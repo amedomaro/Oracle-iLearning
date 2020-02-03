@@ -1,3 +1,3 @@
-##Java Foundations – Course Objectives
-# academy.oracle.com
+# Java Foundations – Course Objectives
+## academy.oracle.com
 This course of study engages students with little programming experience. Students are introduced to object-oriented concepts, terminology, and syntax, and the steps required to create basic Java programs using hands-on, engaging activities. Students will learn the concepts of Java programming, design object-oriented applications with Java and create Java programs using hands-on, engaging activities.
