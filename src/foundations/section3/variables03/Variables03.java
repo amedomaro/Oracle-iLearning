@@ -1,4 +1,4 @@
-package foundations.variables03;
+package foundations.section3.variables03;
 
 public class Variables03 {
 

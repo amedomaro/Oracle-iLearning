@@ -1,4 +1,4 @@
-package foundations.text03;
+package foundations.section2.text03;
 
 public class Text03 {
     public static void drawLegs(){

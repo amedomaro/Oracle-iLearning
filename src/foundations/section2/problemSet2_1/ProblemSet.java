@@ -1,4 +1,4 @@
-package foundations.problemSet2_1;
+package foundations.section2.problemSet2_1;
 
 public class ProblemSet {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package foundations.text02;
+package foundations.section2.text02;
 
 public class Text02 {
     public static void main(String[] args) {
