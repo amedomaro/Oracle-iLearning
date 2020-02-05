@@ -8,9 +8,10 @@ public class ShoppingCart02 {
 //        System.out.println(message);
 
         Customer alex = new Customer("Alex");
-        alex.addGood(new Shirts("Green", 1));
-        alex.addGood(new Shirts("White", 2));
-        alex.addGood(new Pants("Black", 1));
+
+        alex.addGood(new Shirts(Color.BLACK, 1));
+        alex.addGood(new Shirts(Color.WHITE, 2));
+        alex.addGood(new Pants(Color.GREEN, 1));
         alex.printBasket();
 
 

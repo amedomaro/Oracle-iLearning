@@ -2,11 +2,11 @@ package foundations.section3.shoppingcart02;
 
 public abstract class Goods {
     private String name;
-    private String color;
+    private Color color;
     private double price;
     private int count;
 
-    protected Goods(String color, int count){
+    protected Goods(Color color, int count){
         setColor(color);
         setCount(count);
     }
@@ -20,10 +20,10 @@ public abstract class Goods {
     }
 
     public String getColor() {
-        return color;
+        return color.getColor();
     }
 
-    private void setColor(String color) {
+    private void setColor(Color color) {
         this.color = color;
     }
 
