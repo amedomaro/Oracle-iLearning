@@ -18,5 +18,6 @@ public class Input04 {
         //System.out.printf("X: %d , Y: %d", sc.nextInt(), sc.nextInt());
         //System.out.println("X: "        + ", Y: "        );
         sc.close();
+
     }
 }
