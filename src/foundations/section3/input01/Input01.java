@@ -8,7 +8,8 @@ public class Input01 {
         //Store the input as a String and print it.
 
         String input = JOptionPane.showInputDialog("Type something:");
-        JOptionPane.showInputDialog("You entered:", input);
+        JOptionPane.showMessageDialog(null,
+                String.format("You entered:   %s", input),"Answer", JOptionPane.INFORMATION_MESSAGE);
 
         //Parse the input as an int.
         //Print its value +1
@@ -19,8 +20,9 @@ public class Input01 {
             int num = Integer.parseInt(str) + 1;
             JOptionPane.showInputDialog("Your number + 1:", num);
         } catch (NumberFormatException e){
-            JOptionPane.showInputDialog("You were asked to enter a number!",
-                    String.format("%s - is not a number!!!", str));
+            JOptionPane.showMessageDialog(null,
+                    String.format("You were asked to enter a number!\n %s - is not a number!!!", str),
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
         //Try creating a dialog, parsing it, and initializing an int in a single line.
