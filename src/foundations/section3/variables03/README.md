@@ -1,7 +1,7 @@
 # Exercise 3
-•There are six mistakes in this program. 
+• There are six mistakes in this program. 
 
-•Can you fix these mistakes so that the program produces the following output? 
+• Can you fix these mistakes so that the program produces the following output? 
 ~~~~
 bool = true
 intVar1 = 1
