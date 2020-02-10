@@ -7,7 +7,11 @@ public class Person {
     private Map<String, Double> bill = new HashMap<>();
 
     protected void addBill(String name, double num) {
-        bill.put(name, num);
+        if (num >= 0) {
+            bill.put(name, num);
+        } else {
+            System.err.println("The number must be positive");
+        }
     }
 
     protected void removeBill(String name) {
