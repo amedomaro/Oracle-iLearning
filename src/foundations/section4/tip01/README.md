@@ -5,7 +5,7 @@ restaurant. When your party receives their bill, nobody is quite sure what they 
 You only know everyone’s total before tax (5%) and tip (15%). But lucky you!  You brought 
 your laptop and are asked to write a program that calculates everybody’s total.
 
-• Import and edit the Tip01 project.
+• Import and edit the `Tip01` project.
 
 • This is what everyone owes before tax (5%) and tip (15%):
 ~~~~

@@ -19,9 +19,8 @@ public class Person {
     }
 
     public void printBill() {
-        for (Map.Entry<String, Double> pair : bill.entrySet()){
-            System.out.printf("%s: $%.1f\n",
-                    pair.getKey(), pair.getValue() * 0.05 + pair.getValue() * 0.15 + pair.getValue());
+        for (Map.Entry<String, Double> pair : bill.entrySet()) {
+            System.out.printf("%s: $%.1f\n", pair.getKey(), (pair.getValue() * (1 + 0.05 + 0.15)));
         }
     }
 
