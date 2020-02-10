@@ -1,4 +1,4 @@
-package foundations.section4.stringsEx;
+package foundations.section4.stringsEx01;
 
 public class NameMaker {
 
