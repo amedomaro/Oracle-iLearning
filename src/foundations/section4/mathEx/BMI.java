@@ -6,48 +6,40 @@ import java.io.InputStreamReader;
 
 public class BMI {
 
-    private double weight = 0.0, height = 0;
+    public double weight, height, temp;
 
     public void getBmi(){
-        getWeight();
-        System.out.println(1);
-        getHeight();
-        System.out.println(2);
-
-    }
-
-    public void getWeight() {
         System.out.print("Enter the weight in pounds: ");
         weight = getValue();
-    }
 
-    public void getHeight() {
-        System.out.print("Enter the height in pounds: ");
+        System.out.print("Enter the height in inches: ");
         height = getValue();
+
     }
 
     private double getValue() {
-
-        double result = 0;
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 
             String input = br.readLine();
 
             if (input.matches("(([-+])?[0-9]+(\\.[0-9]+)?)+")) {    // Check for double
-                result = Double.parseDouble(input);
+                temp = Double.parseDouble(input);
 
-                if (result <= 0){
-                    System.out.println("The number must be greater than 0");
+                if (temp <= 0){
+                    System.out.print("The number must be greater than 0!!!\nEnter the number: ");
+                    getValue();
+
                 }
 
             } else {
-                System.out.printf("%s - is not a number!!!\n", input);
+                System.out.printf("%s - is not a number!!!\nEnter the number: ", input);
+                getValue();
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return result;
+        return temp;
     }
 }

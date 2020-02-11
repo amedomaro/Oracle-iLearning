@@ -5,6 +5,6 @@ public class ComputeBMI {
         BMI bmi = new BMI();
         bmi.getBmi();
 
-
+        System.out.println(bmi.weight);
     }
 }
