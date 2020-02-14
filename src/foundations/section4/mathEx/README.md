@@ -12,9 +12,9 @@
 
 • Use the methods of the `Math` class and display the output as:
 ~~~~
-– Enter the weight in pounds: 59
+– Enter the weight in pounds: 132.5
 
-– Enter the height in inches: 158
+– Enter the height in inches: 62.5
 
 – Your Body Mass Index is 24
 ~~~~
