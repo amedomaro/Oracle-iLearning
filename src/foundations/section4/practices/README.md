@@ -51,6 +51,5 @@ You must implement the following:
 ###### Expected Output::
 ~~~~
 Type your name: Jenny Weaver 
-5 
 Your name is: Weaver, J.
 ~~~~
