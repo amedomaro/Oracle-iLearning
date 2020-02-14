@@ -1,4 +1,5 @@
-# Tasks
+# Practices - Section 3
+## Tasks
 Your goal is to create a program similar to JavaLibs.  Write a story where certain 
 parts of the resulting story text are modified by the user’s input.  Prompt the user for various inputs.
 
