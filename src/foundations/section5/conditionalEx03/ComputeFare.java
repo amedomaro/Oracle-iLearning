@@ -1,7 +1,6 @@
-package foundations.section5.ConditionalEx03;
+package foundations.section5.conditionalEx03;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class ComputeFare {
     public static void main(String[] args) throws IOException {

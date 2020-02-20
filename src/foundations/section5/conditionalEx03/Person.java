@@ -1,4 +1,4 @@
-package foundations.section5.ConditionalEx03;
+package foundations.section5.conditionalEx03;
 
 import java.io.BufferedReader;
 import java.io.IOException;

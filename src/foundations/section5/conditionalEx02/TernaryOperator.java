@@ -1,4 +1,4 @@
-package foundations.section5.ConditionalEx02;
+package foundations.section5.conditionalEx02;
 
 public class TernaryOperator {
 

@@ -1,4 +1,4 @@
-package foundations.section5.ConditionalEx01;
+package foundations.section5.conditionalEx01;
 
 import java.io.IOException;
 
