@@ -1,4 +1,4 @@
-package foundations.section5.SwitchEx01;
+package foundations.section5.switchEx;
 
 import java.io.BufferedReader;
 import java.io.IOException;
