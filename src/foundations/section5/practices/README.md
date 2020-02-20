@@ -29,11 +29,16 @@ is not included in the range.
 visible spectrum.
 4. Expected Output:
 ~~~~
-a. Enter a color code 630 The color is Red 
-b. Enter a color code 25.0 The entered wavelength is not a part of the visible spectrum 
-c. Enter a color code 750.5 The entered wavelength is not a part of the visible spectrum
+a. Enter a color code 
+    630 
+        The color is Red 
+b. Enter a color code 
+    25.0 
+        The entered wavelength is not a part of the visible spectrum 
+c. Enter a color code 
+    750.5 
+        The entered wavelength is not a part of the visible spectrum
 ~~~~
-The `ProblemSet5_1` project is available to help you get started.
 
 ### Problem 2: Determining the next color for a stop light 
 ###### Overview
@@ -63,7 +68,6 @@ d. Enter a color code
     4
        Invalid color
 ~~~~
-The `ProblemSet5_2` project is available to help you get started
 
 ### Problem 3: Determining the next color for a stop light using `switch`
 ###### Overview
@@ -73,5 +77,3 @@ Re-write practice 2 using `switch` statement.
 
 ###### Task
 Implement practice 2 using `switch` statement and ensure the program alert users if they’ve entered anyinvalid value. 
-
-The `ProblemSet5_3` project is available to help you get started.
