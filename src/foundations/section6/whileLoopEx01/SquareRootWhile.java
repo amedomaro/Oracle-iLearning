@@ -1,4 +1,4 @@
-package foundations.section6.WhileLoopEx01;
+package foundations.section6.whileLoopEx01;
 
 import java.util.Scanner;
 

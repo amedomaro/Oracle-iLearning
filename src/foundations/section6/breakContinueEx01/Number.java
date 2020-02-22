@@ -1,4 +1,4 @@
-package foundations.section6.BreakContinueEx01;
+package foundations.section6.breakContinueEx01;
 
 import java.io.BufferedReader;
 import java.io.IOException;
