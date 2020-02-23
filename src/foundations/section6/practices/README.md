@@ -81,3 +81,5 @@ it’s about understanding how to break a big problem into smaller tasks.
 The knowledge you’ve gained in this 
 section on loops will be very helpful in completing this program.  You’re free to use whichever type of loop 
 statements you feel would be best.  You’ll also need to remember a few concepts from previous sections.
+
+The ProblemSet6_3 project is available to help you get started.
