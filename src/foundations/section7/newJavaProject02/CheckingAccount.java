@@ -12,12 +12,14 @@ public class CheckingAccount {
 
     protected void withdraw(double num){
         if(num > 0){
+
             if (getBalance() - num >= 0){
                 setBalance(balance - num);
                 System.out.printf("Successfully.\nYour new balance: %.2f\n", getBalance());
             }else {
                 System.out.printf("Your balance is too small to withdraw: %.2f\n", num);
             }
+
         } else {
             System.out.println("The number is entered incorrectly, the number must be positive");
         }
