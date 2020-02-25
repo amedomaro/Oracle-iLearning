@@ -1,4 +1,4 @@
-package foundations.section7.newJavaProject01;
+package foundations.section7.creatingClass01;
 
 public class AccountTest {
 
