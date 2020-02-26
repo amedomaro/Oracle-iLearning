@@ -1,4 +1,4 @@
-package foundations.section7.overloadingMethods01;
+package foundations.section7.overloadingMethods;
 
 public class Prisoner {
 
