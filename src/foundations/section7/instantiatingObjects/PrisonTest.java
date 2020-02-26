@@ -1,4 +1,4 @@
-package foundations.section7.instantiatingObjects01;
+package foundations.section7.instantiatingObjects;
 
 public class PrisonTest {
 
