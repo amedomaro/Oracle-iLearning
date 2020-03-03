@@ -20,8 +20,8 @@ public class FirstGame extends Game {
          *
          */
 
-        Random random = new Random();
-        setPoints(random.nextInt(1000));
+        Random random = new Random();           // TEST !!!
+        setPoints(random.nextInt(1000)); // emulate the end of the game
 
         if (getPoints() < 300) {
             win = arr[0];
