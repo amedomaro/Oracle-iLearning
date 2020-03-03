@@ -15,11 +15,11 @@ public class Main {
         terminal.putMoney(card2, 40);
 
         game1.Swiping(card1);
-        game1.Swiping(card1);
+        game1.Swiping(card1); // We play, using the Card - 1
         game1.Swiping(card1);
 
         game1.Swiping(card2);
-        game1.Swiping(card2);
+        game1.Swiping(card2); // We play, using the Card - 2
         game1.Swiping(card2);
 
         terminal.checkBalance(card1);
