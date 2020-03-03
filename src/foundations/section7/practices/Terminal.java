@@ -5,7 +5,9 @@ public class Terminal {
     private String[][] arr = {{"0", "exit"}, {"Bear", "10"}, {"Clock", "25"}, {"Certificate", "50"}};
 
     public void putMoney(Card card, double money) {
-        card.setCredit(card.getCredit() + (money / 2));
+        if (money > 0) {
+            card.setCredit(card.getCredit() + (money / 2));
+        }
     }
 
     public void checkBalance(Card card) {

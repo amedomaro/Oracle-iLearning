@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Terminal terminal = new Terminal();
-        Game game = new Game();
+        FirstGame game1 = new FirstGame();
 
         Card card1 = new Card();
         Card card2 = new Card();
@@ -14,13 +14,13 @@ public class Main {
         terminal.putMoney(card1, 65);
         terminal.putMoney(card2, 40);
 
-        game.Swiping(card1);
-        game.Swiping(card1);
-        game.Swiping(card1);
+        game1.Swiping(card1);
+        game1.Swiping(card1);
+        game1.Swiping(card1);
 
-        game.Swiping(card2);
-        game.Swiping(card2);
-        game.Swiping(card2);
+        game1.Swiping(card2);
+        game1.Swiping(card2);
+        game1.Swiping(card2);
 
         terminal.checkBalance(card1);
         terminal.checkBalance(card2);
