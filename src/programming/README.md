@@ -1,4 +1,5 @@
 # Java Programming – Course Objectives
+![java (programming)](https://user-images.githubusercontent.com/30287338/75895699-0ce14400-5e47-11ea-8ab9-b5098ab703b3.jpg)
 ## academy.oracle.com
 This course of study builds on the skills gained by students in Java Fundamentals or Java Foundations to 
 help advance Java programming skills.  Students will design object-oriented applications with Java and 
