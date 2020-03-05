@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class FirstGame extends Game {
     private int points;
-    private int[] arr = {5, 10, 25};
+    private int[] winTicket = {5, 10, 25};
 
     protected FirstGame() {
         super.cost = 10;
@@ -24,11 +24,11 @@ public class FirstGame extends Game {
         setPoints(random.nextInt(1000)); // emulate the end of the game
 
         if (getPoints() < 300) {
-            win = arr[0];
+            win = winTicket[0];
         } else if (getPoints() < 700) {
-            win = arr[1];
+            win = winTicket[1];
         } else {
-            win = arr[2];
+            win = winTicket[2];
         }
 
         System.out.printf("Card № %d\nYour winnings amounted to: %d ticket\n\n", card.getNumber(), win);
