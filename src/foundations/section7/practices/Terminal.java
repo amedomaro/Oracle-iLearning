@@ -2,7 +2,7 @@ package foundations.section7.practices;
 
 
 public class Terminal {
-    private String[][] arr = {{"0", "exit"}, {"Bear", "10"}, {"Clock", "25"}, {"Certificate", "50"}};
+    private String[][] prize = {{"is", "exit"}, {"Bear", "10"}, {"Clock", "25"}, {"Certificate", "50"}};
 
     public void putMoney(Card card, double money) {
         if (money > 0) {
@@ -55,22 +55,20 @@ public class Terminal {
     }
 
     public void getPrize(Card card) {
-        int num;
-
         System.out.printf("select Prize:\n [0] %s - %s\n [1] %s - %s tickets\n [2] %s - %s tickets\n [3] %s - %s tickets\n",
-                arr[0][0], arr[0][1], arr[1][0], arr[1][1], arr[2][0], arr[2][1], arr[3][0], arr[3][1]);
+                prize[0][0], prize[0][1], prize[1][0], prize[1][1], prize[2][0], prize[2][1], prize[3][0], prize[3][1]);
         System.out.print("Insert the number: ");
 
         while (true) {
-            num = new Number().getInteger();
+            int num = new Number().getInteger();
 
             if (num == 0){
                 break;
             }
 
-            if ((num > 0 && num < 4) && (card.getTicket() >= Integer.parseInt(arr[num][1]))) {
+            if ((num > 0 && num < 4) && (card.getTicket() >= Integer.parseInt(prize[num][1]))) {
                 card.setTicket(card.getTicket() - num);
-                System.out.printf("WoW! You are getting: %s\n\n", arr[num][0]);
+                System.out.printf("WoW! You are getting: %s\n\n", prize[num][0]);
                 break;
             } else if (num < 0 || num > 3){
                 System.out.print("Incorrect number entered\nEnter again: ");
