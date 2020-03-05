@@ -3,9 +3,9 @@ package foundations.section8.debuggingEx01;
 public class MaxIntegers {
 
     public static void main(String[] args) {
-        int num1 = 1, num2 = 2, num3 = 3;
+        int num1 = 3, num2 = 3, num3 = 3;
         //int max = 0;
-        int max = Integer.MIN_VALUE; // solution
+        int max = num1; // solution
 
         if (num1 > num2 && num1 > num3) {
             max = num1;
