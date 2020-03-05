@@ -1,4 +1,5 @@
 # Java Foundations – Course Objectives
+![java (foundations)](https://user-images.githubusercontent.com/30287338/75895412-ac520700-5e46-11ea-8444-3c38e69d89c5.jpg)
 ## academy.oracle.com
 This course of study engages students with little programming experience. 
 Students are introduced to object-oriented concepts, terminology, and syntax, 
