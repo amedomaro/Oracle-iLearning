@@ -7,7 +7,6 @@ import java.util.List;
 public class ArrayListEx2 {
 
     public static void main(String[] args) {
-        int count = 1;
         List<Integer> number = new ArrayList<>();
 
         for (int i = 0; i <= 10; i++) {
@@ -23,8 +22,6 @@ public class ArrayListEx2 {
             if (i % 2 == 0) {
                 iterator.remove();
             }
-
-            count++;
         }
 
         System.out.println(number); // List after removal
