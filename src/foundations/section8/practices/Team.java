@@ -1,6 +1,5 @@
 package foundations.section8.practices;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,6 @@ public class Team {
     private String name;
     private int win, loss, tie, goalScored, goalAllowed;
     private static List<Team> team = new ArrayList<>();
-
 
     public Team(String name) {
         setName(name);
@@ -30,8 +28,9 @@ public class Team {
         Team.team.remove(name);
     }
 
+    // Below getters, setters and Override
 
-    protected String getName() {                            // Below getters, setters and Override
+    protected String getName() {
         return name;
     }
 

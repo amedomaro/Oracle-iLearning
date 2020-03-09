@@ -25,7 +25,7 @@ public class Scheduler {
             }
         }
 
-        System.out.println("\n\n*********RESULTS*********\n\n");
+        System.out.println("Season is over\n\n*********RESULTS*********\n\n");
 
         for (Team team : Team.getList()) {  // Print statistic
             System.out.println(team);
@@ -39,7 +39,7 @@ public class Scheduler {
     private void toss() {
         Collections.shuffle(Team.getList());
 
-        if (Team.getList().size() > 1 && Temperature.getTemperature() != Double.MIN_VALUE) {
+        if (Team.getList().size() > 1) {
 
             if (Team.getList().size() % 2 == 0) {           // If the number of teams is even
                 for (int i = 0; i < Team.getList().size(); i += 2) {

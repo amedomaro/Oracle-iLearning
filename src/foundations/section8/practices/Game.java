@@ -7,7 +7,7 @@ import java.util.Random;
 public class Game {
 
     private static int count;
-    private int numGame = 1, goalTeam1, goalTeam2;
+    private int numGame, goalTeam1, goalTeam2;
     private double temperature;
     private String teamName1, teamName2;
     private Random random = new Random();
@@ -17,12 +17,11 @@ public class Game {
         temperature = Temperature.getTemperature();
         setTeamName1(team1.getName());
         setTeamName2(team2.getName());
-        numGame += count++;
+        numGame = ++count;
         playGame(team1, team2);
     }
 
     protected void playGame(Team team1, Team team2) {
-
         dependenceTemp();
 
         team1.setGoalScored(team1.getGoalScored() + goalTeam1);                  // adding scored goals
@@ -31,23 +30,12 @@ public class Game {
         team1.setGoalAllowed(team1.getGoalScored() + random.nextInt(2));  // adding unscored goals
         team2.setGoalAllowed(team2.getGoalScored() + random.nextInt(2));
 
-        if (getGoalTeam1() > getGoalTeam2()) {                                   // Win - Loss
-            team1.setWin(team1.getWin() + 1);
-            team2.setLoss(team2.getLoss() + 1);
-
-        } else if (getGoalTeam1() < getGoalTeam2()) {
-            team2.setWin(team2.getWin() + 1);
-            team1.setLoss(team1.getLoss() + 1);
-
-        } else {
-            team1.setTie(team1.getTie() + 1);
-            team2.setTie(team2.getTie() + 1);
-        }
+        winLoss(team1, team2);
 
         games.add(this);
     }
 
-    private void dependenceTemp(){
+    private void dependenceTemp() {
 
         if (Temperature.getTemperature() < 15) {
             setGoalTeam1(random.nextInt(7));
@@ -63,7 +51,25 @@ public class Game {
         }
     }
 
-    protected static List<Game> getGames() {                       // Below getters, setters and Override
+    private void winLoss(Team team1, Team team2) {
+
+        if (getGoalTeam1() > getGoalTeam2()) {
+            team1.setWin(team1.getWin() + 1);
+            team2.setLoss(team2.getLoss() + 1);
+
+        } else if (getGoalTeam1() < getGoalTeam2()) {
+            team2.setWin(team2.getWin() + 1);
+            team1.setLoss(team1.getLoss() + 1);
+
+        } else {
+            team1.setTie(team1.getTie() + 1);
+            team2.setTie(team2.getTie() + 1);
+        }
+    }
+
+    // Below getters, setters and Override
+
+    protected static List<Game> getGames() {
         return games;
     }
 
