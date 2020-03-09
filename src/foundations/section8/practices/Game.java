@@ -23,18 +23,7 @@ public class Game {
 
     protected void playGame(Team team1, Team team2) {
 
-        if (Temperature.getTemperature() < 15) {
-            setGoalTeam1(random.nextInt(7));
-            setGoalTeam2(random.nextInt(7));
-
-        } else if (Temperature.getTemperature() < 30) {
-            setGoalTeam1(random.nextInt(5));
-            setGoalTeam2(random.nextInt(5));
-
-        } else {
-            setGoalTeam1(random.nextInt(3));
-            setGoalTeam2(random.nextInt(3));
-        }
+        dependenceTemp();
 
         team1.setGoalScored(team1.getGoalScored() + goalTeam1);                  // adding scored goals
         team2.setGoalScored(team2.getGoalScored() + goalTeam2);
@@ -42,7 +31,7 @@ public class Game {
         team1.setGoalAllowed(team1.getGoalScored() + random.nextInt(2));  // adding unscored goals
         team2.setGoalAllowed(team2.getGoalScored() + random.nextInt(2));
 
-        if (getGoalTeam1() > getGoalTeam2()) {
+        if (getGoalTeam1() > getGoalTeam2()) {                                   // Win - Loss
             team1.setWin(team1.getWin() + 1);
             team2.setLoss(team2.getLoss() + 1);
 
@@ -56,6 +45,22 @@ public class Game {
         }
 
         games.add(this);
+    }
+
+    private void dependenceTemp(){
+
+        if (Temperature.getTemperature() < 15) {
+            setGoalTeam1(random.nextInt(7));
+            setGoalTeam2(random.nextInt(7));
+
+        } else if (Temperature.getTemperature() < 30) {
+            setGoalTeam1(random.nextInt(5));
+            setGoalTeam2(random.nextInt(5));
+
+        } else {
+            setGoalTeam1(random.nextInt(3));
+            setGoalTeam2(random.nextInt(3));
+        }
     }
 
     protected static List<Game> getGames() {                       // Below getters, setters and Override
