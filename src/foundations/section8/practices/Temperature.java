@@ -5,18 +5,37 @@ import java.util.List;
 
 public class Temperature {
 
-    private double temperature;
+    private static double temperature = Double.MIN_VALUE;
     private static List<Double> temperatures = new ArrayList<>();
 
-    protected Temperature(double temperature) {
-        setTemperature(temperature);
-    }
-
-    public double getTemperature() {                                // Below getters and setters
+    protected static double getTemperature() {                                // Below getters and setters
         return temperature;
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    protected static void setTemperature(double temperature) {
+        if (temperature > -50 && temperature < 50) {
+            Temperature.temperature = temperature;
+
+            if (temperature >= 0) {
+                temperatures.add(temperature);
+            }
+
+        } else {
+            System.out.println("Incorrect temperature input");
+        }
+    }
+
+    protected static void showTemperatureSeason() {
+        double max = temperatures.get(0), sum = 0;
+
+        for (Double temp : temperatures) {
+            sum += temp;
+
+            if (temp > max) {
+                max = temp;
+            }
+        }
+
+        System.out.printf("Hottest Temp: %.1f\nAverage Temp: %.1f", max, sum / temperatures.size());
     }
 }

@@ -1,30 +1,28 @@
 package foundations.section8.practices;
 
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Team {
     private String name;
     private int win, loss, tie, goalScored, goalAllowed;
-    private static Map<String, Team> team = new HashMap<>();
+    private static List<Team> team = new ArrayList<>();
+
 
     public Team(String name) {
         setName(name);
     }
 
-    protected static Team getTeam(String name) {
-        return Team.team.get(name);
-    }
-
-    protected static Map<String, Team> getMap() {
+    protected static List<Team> getList() {
         return team;
     }
 
-    protected static void addTeam(String name, Team team) {
-        if (!Team.team.containsKey(name)) {
-            Team.team.put(name, team);
+    protected static void addTeam(Team team) {
+        if (!Team.team.contains(team)) {
+            Team.team.add(team);
         } else {
-            System.out.printf("ERROR!\n%s team already exists!\n\n", name);
+            System.out.printf("ERROR!\n%s team is already on the list\n", team.getName());
         }
     }
 
@@ -45,7 +43,7 @@ public class Team {
         return win;
     }
 
-    private void setWin(int win) {
+    protected void setWin(int win) {
         if (win > 0) {
             this.win = win;
         }
@@ -55,7 +53,7 @@ public class Team {
         return loss;
     }
 
-    private void setLoss(int loss) {
+    protected void setLoss(int loss) {
         if (loss > 0) {
             this.loss = loss;
         }
@@ -65,7 +63,7 @@ public class Team {
         return tie;
     }
 
-    private void setTie(int tie) {
+    protected void setTie(int tie) {
         if (tie > 0) {
             this.tie = tie;
         }
@@ -75,7 +73,7 @@ public class Team {
         return goalScored;
     }
 
-    private void setGoalScored(int goalScored) {
+    protected void setGoalScored(int goalScored) {
         if (goalScored > 0) {
             this.goalScored = goalScored;
         }
@@ -85,7 +83,7 @@ public class Team {
         return goalAllowed;
     }
 
-    private void setGoalAllowed(int goalAllowed) {
+    protected void setGoalAllowed(int goalAllowed) {
         if (goalAllowed > 0) {
             this.goalAllowed = goalAllowed;
         }

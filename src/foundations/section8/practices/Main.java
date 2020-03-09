@@ -1,19 +1,20 @@
 package foundations.section8.practices;
 
-import java.util.Map;
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Scheduler scheduler = new Scheduler();
 
-        Team.addTeam("Zenit", new Team("Zenit"));           // Create team
-        Team.addTeam("Spartak", new Team("Spartak"));
-        Team.addTeam("CSK", new Team("CSK"));
-        Team.addTeam("Dinamo", new Team("Dinamo"));
+        Team.addTeam(new Team("Zenit"));           // Create team
+        Team.addTeam(new Team("Spartak"));
+        Team.addTeam(new Team("CSK"));
+        Team.addTeam(new Team("Dinamo"));
 
+        scheduler.season();
+        Temperature.showTemperatureSeason();
 
-        for (Map.Entry<String, Team> team : Team.getMap().entrySet()) {  // Print statistic
-            System.out.println(team.getValue());
-        }
+        new InputNumber().br.close();
     }
 }

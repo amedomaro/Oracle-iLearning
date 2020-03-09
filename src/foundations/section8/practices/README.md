@@ -6,7 +6,7 @@ that spring has arrived, another season of the league can begin. Your challenge 
 that models a soccer league and keeps track of the season’s statistics.
 
 There are 4 teams in the league. Matchups are determined at random. 2 games are played every Tuesday, 
-which allows every team to participate weekly. There is no set number of games per season. The season 
+which allows every team to participate weekly. There is no set inputNumber of games per season. The season 
 continues until winter arrives. 
 
 The league is very temperature-sensitive. Defenses are sluggish on hot days. Hotter days allow for the 
@@ -29,10 +29,10 @@ Print each team’s statistics when the season ends.
 
 ###### Games
 In a game, it’s important to note each team’s name, each team’s score, and the temperature that day. 
-Number each game with integer ID number.  This number increases as each game is played. Keep track of 
+Number each game with integer ID inputNumber.  This inputNumber increases as each game is played. Keep track of 
 every game played this season.  This class stores an `ArrayList` of all games as a field.
 
-Your program should determine scores at random. The maximum number of goals any one team can score 
+Your program should determine scores at random. The maximum inputNumber of goals any one team can score 
 should increase proportionally with the temperature. But make sure these numbers are somewhat 
 reasonable.
 
