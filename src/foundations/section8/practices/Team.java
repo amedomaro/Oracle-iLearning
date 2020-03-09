@@ -24,10 +24,6 @@ public class Team {
         }
     }
 
-    protected static void removeTeam(String name) {
-        Team.team.remove(name);
-    }
-
     // Below getters, setters and Override
 
     protected String getName() {
