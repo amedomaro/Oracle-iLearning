@@ -1,6 +1,7 @@
 package foundations.section9.javaFX02;
 
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -26,8 +27,13 @@ public class Main extends Application {
 //        TilePane root = new TilePane();
 //        root.getChildren().addAll(btn1, btn2);
 
-        VBox root = new VBox();
+//        VBox root = new VBox();
+//        root.getChildren().addAll(btn1, btn2);
+
+        Group root = new Group();
         root.getChildren().addAll(btn1, btn2);
+
+
 
 
 
