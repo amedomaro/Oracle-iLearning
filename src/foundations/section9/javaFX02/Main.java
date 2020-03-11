@@ -33,10 +33,6 @@ public class Main extends Application {
         Group root = new Group();
         root.getChildren().addAll(btn1, btn2);
 
-
-
-
-
         primaryStage.setTitle("new program");
         primaryStage.setScene(new Scene(root, 300, 250));
         primaryStage.show();
