@@ -19,10 +19,10 @@ public class Scheduler {
                 System.out.println("Too cold to play.");
                 count++;
 
-            } else if (Temperature.getTemperature() > 0 && Temperature.getTemperature() != Double.MIN_VALUE){
-                Temperature.setTemperature(Double.MIN_VALUE);
+            } else if (Temperature.getTemperature() >= 0){
                 count = 0;
                 toss();
+                Temperature.setTemperature(Double.MIN_VALUE);
             }
         }
 
