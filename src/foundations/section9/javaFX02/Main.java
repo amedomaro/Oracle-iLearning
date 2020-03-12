@@ -16,6 +16,7 @@ public class Main extends Application {
         btn1.setText("OMG");
         btn1.setOnAction(event -> System.out.println("text1"));
         btn1.setLayoutY(100);
+        btn1.setLayoutX(100);
 
         Button btn2 = new Button();
         btn2.setText("WTF");
