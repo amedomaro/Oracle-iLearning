@@ -12,6 +12,7 @@ public class GoalTest extends Application {
     @Override
     public void start(Stage primaryStage) {
         //Instantiate a few Goal objects
+        Goal goal = new Goal();
 
         Scene scene = new Scene(root, 600, 500, Color.rgb(50,50,50));
 
