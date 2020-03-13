@@ -11,9 +11,15 @@ public class Goal {
     ImageView gloveView = new ImageView(glove);
 
     protected Goal(){
-
         dukeView.setPreserveRatio(true);            // Scaling a Node the Right Way
         dukeView.setFitWidth(125);
+        dukeView.setX(250);
+        dukeView.setY(150);
+
+        gloveView.setPreserveRatio(true);
+        gloveView.setFitWidth(85);
+        gloveView.setX(300);
+        gloveView.setY(150);
 
         GoalTest.root.getChildren().addAll(dukeView, gloveView);
 
