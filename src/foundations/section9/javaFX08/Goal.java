@@ -2,7 +2,8 @@ package foundations.section9.javaFX08;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 public class Goal {
     private Image duke = new Image(getClass().getResource("Images/Duke.png").toString());
@@ -11,7 +12,7 @@ public class Goal {
     private Image glove = new Image(getClass().getResource("Images/Glove.png").toString());
     protected ImageView gloveView = new ImageView(glove);
 
-    private AudioClip tone = new AudioClip(getClass().getResource("Audio/Note5.wav").toString());
+    MediaPlayer player = new MediaPlayer(new Media(getClass().getResource("Audio/Note5.wav").toString()));
 
     protected Goal(){
         dukeView.setPreserveRatio(true);            // Scaling a Node the Right Way
