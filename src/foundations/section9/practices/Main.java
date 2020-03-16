@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        CampusMap map = new CampusMap();
+        CampusMap.getCampusMap();  // Singleton
         Scene scene = new Scene(root, 900, 590);
 
         primaryStage.setTitle("Campus Map");
