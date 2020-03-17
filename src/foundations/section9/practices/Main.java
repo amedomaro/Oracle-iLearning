@@ -3,7 +3,6 @@ package foundations.section9.practices;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -21,7 +20,6 @@ public class Main extends Application {
         primaryStage.setTitle("Campus Map");
         primaryStage.setScene(scene);
         primaryStage.show();
-
 
     }
 
