@@ -12,10 +12,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         CampusMap.getCampusMap();  // Singleton
         Scene scene = new Scene(root, 900, 590);
-        MyButton btn1 = new MyButton("DORM 1", 100, 440, "DODGERBLUE");
-        MyButton btn2 = new MyButton("DORM 2", 300, 440, "LIGHTPINK");
-        MyButton btn3 = new MyButton("DORM 3", 500, 440, "GOLD");
-        MyButton btn4 = new MyButton("DORM 4", 700, 440, "GREENYELLOW");
+
+        Dorm dorm1 = new Dorm(100, 200, new MyButton("DORM 1", 100, 440, "DODGERBLUE"));
+        Dorm dorm2 = new Dorm(100, 200, new MyButton("DORM 2", 300, 440, "LIGHTPINK"));
+        Dorm dorm3 = new Dorm(100, 200, new MyButton("DORM 3", 500, 440, "GOLD"));
+        Dorm dorm4 = new Dorm(100, 200, new MyButton("DORM 4", 700, 440, "GREENYELLOW"));
 
         primaryStage.setTitle("Campus Map");
         primaryStage.setScene(scene);

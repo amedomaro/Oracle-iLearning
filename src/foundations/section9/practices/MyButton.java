@@ -15,10 +15,6 @@ public class MyButton extends Button {
         Main.root.getChildren().add(this);
     }
 
-    protected void action() {
-        this.setOnAction(event -> System.out.println("Hello World!"));
-    }
-
     // Below getters and setters
 
     protected String getColor() {
