@@ -11,7 +11,7 @@ public class MyButton extends Button {
         this.setText(getName());
         this.setLayoutX(x);
         this.setLayoutY(y);
-        this.setStyle(String.format("-fx-background-color: %s", getColor()));
+        this.setStyle(String.format("-fx-background-color: %s", getColor())); // rgba(0,0,0,0)
 
         Main.root.getChildren().add(this);
     }

@@ -1,13 +1,23 @@
 package foundations.section9.practices;
 
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
+
 public class Dorm {
     private double x, y;
     private String name;
     private int populations;
 
     protected Dorm(double x, double y, MyButton button){
-        this.setX(x);
-        this.setY(y);
+        setX(x);
+        setY(y);
+        setName(button.getName());
+
+        Circle circle = new Circle(getX(), getY(), 7, Paint.valueOf(button.getColor()));
+        circle.setOpacity(0.7);
+
+        Main.root.getChildren().add(circle);
+
         button.setOnAction(event -> System.out.println("Hello World!"));
     }
 
@@ -33,7 +43,7 @@ public class Dorm {
         return name;
     }
 
-    protected void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
@@ -41,7 +51,7 @@ public class Dorm {
         return populations;
     }
 
-    protected void setPopulations(int populations) {
+    private void setPopulations(int populations) {
         this.populations = populations;
     }
 }
