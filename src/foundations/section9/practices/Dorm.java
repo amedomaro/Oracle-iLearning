@@ -3,22 +3,52 @@ package foundations.section9.practices;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
+import javax.swing.*;
+
 public class Dorm {
     private double x, y;
-    private String name;
+    private String name, input;
     private int populations;
+    private Circle circle;
 
-    protected Dorm(double x, double y, MyButton button){
+    protected Dorm(double x, double y, MyButton button) {
         setX(x);
         setY(y);
         setName(button.getName());
 
-        Circle circle = new Circle(getX(), getY(), 7, Paint.valueOf(button.getColor()));
+        circle = new Circle(getX(), getY(), 7, Paint.valueOf(button.getColor()));
         circle.setOpacity(0.7);
 
         Main.root.getChildren().add(circle);
 
-        button.setOnAction(event -> System.out.println("Hello World!"));
+        button.setOnAction(event -> activation());
+    }
+
+    private void activation() {
+        input = JOptionPane.showInputDialog(null, "Enter an integer from 0 to 300",
+                "How many people live in this dormitory?", JOptionPane.PLAIN_MESSAGE);
+
+        if (input != null){
+            getValue();
+            circle.setRadius((double) getPopulations() / 5);
+        }
+    }
+
+    private void getValue() {
+        if (input.matches("(-?\\d+)")) {
+            int num = Integer.parseInt(input);
+
+            if (num >= 0 && num <= 300) {
+                setPopulations(num);
+            } else {
+                JOptionPane.showMessageDialog(null, "The number must be from 0 to 300",
+                        "ERROR", JOptionPane.WARNING_MESSAGE);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, String.format("%s - is not a integer !", input),
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     // Below getters and setters
