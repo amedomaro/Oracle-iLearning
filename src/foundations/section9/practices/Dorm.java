@@ -4,12 +4,15 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 import javax.swing.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Dorm {
     private double x, y;
     private String name, input;
-    private int populations;
+    private int populations = 35;
     private Circle circle;
+    private static List<Dorm> dormList = new ArrayList<>();
 
     protected Dorm(double x, double y, MyButton button) {
         setX(x);
@@ -22,13 +25,14 @@ public class Dorm {
         Main.root.getChildren().add(circle);
 
         button.setOnAction(event -> activation());
+        circle.setOnMouseClicked(event -> activation());
     }
 
     private void activation() {
         input = JOptionPane.showInputDialog(null, "Enter an integer from 0 to 300",
                 "How many people live in this dormitory?", JOptionPane.PLAIN_MESSAGE);
 
-        if (input != null){
+        if (input != null) {
             getValue();
             circle.setRadius((double) getPopulations() / 5);
         }
@@ -52,6 +56,15 @@ public class Dorm {
     }
 
     // Below getters and setters
+
+
+    protected static List<Dorm> getDormList() {
+        return dormList;
+    }
+
+    protected static void addDormList(Dorm dorm) {
+        Dorm.dormList.add(dorm);
+    }
 
     private double getX() {
         return x;
