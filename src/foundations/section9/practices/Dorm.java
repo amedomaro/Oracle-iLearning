@@ -1,7 +1,11 @@
 package foundations.section9.practices;
 
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 import javax.swing.*;
 import java.util.List;
@@ -10,8 +14,9 @@ import java.util.ArrayList;
 public class Dorm {
     private double x, y;
     private String name, input;
-    private int populations = 35;
+    private int populations;
     private Circle circle;
+    private Text text;
     private static List<Dorm> dormList = new ArrayList<>();
 
     protected Dorm(double x, double y, MyButton button) {
@@ -22,7 +27,12 @@ public class Dorm {
         circle = new Circle(getX(), getY(), 7, Paint.valueOf(button.getColor()));
         circle.setOpacity(0.7);
 
-        Main.root.getChildren().add(circle);
+        text = new Text(getX() - 40, getY() + 20,
+                String.format("     %s\nPopulation: %d",getName(), getPopulations()));
+        text.setFill(Color.DARKRED);
+        text.setFont(Font.font("Default", FontWeight.BOLD, 12));
+
+        Main.root.getChildren().addAll(circle, text);
 
         button.setOnAction(event -> activation());
         circle.setOnMouseClicked(event -> activation());
@@ -30,20 +40,21 @@ public class Dorm {
 
     private void activation() {
         input = JOptionPane.showInputDialog(null, "Enter an integer from 0 to 300",
-                "How many people live in this dormitory?", JOptionPane.PLAIN_MESSAGE);
+                String.format("How many people live in %s", getName()), JOptionPane.PLAIN_MESSAGE);
 
         if (input != null) {
-            getValue();
+            setPopulations(getValue());
             circle.setRadius((double) getPopulations() / 5);
+            text.setText(String.format("    %s\nPopulation: %d",getName(), getPopulations()));
         }
     }
 
-    private void getValue() {
+    private int getValue() {
         if (input.matches("(-?\\d+)")) {
             int num = Integer.parseInt(input);
 
             if (num >= 0 && num <= 300) {
-                setPopulations(num);
+                return num;
             } else {
                 JOptionPane.showMessageDialog(null, "The number must be from 0 to 300",
                         "ERROR", JOptionPane.WARNING_MESSAGE);
@@ -53,6 +64,7 @@ public class Dorm {
             JOptionPane.showMessageDialog(null, String.format("%s - is not a integer !", input),
                     "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+        return getPopulations();
     }
 
     // Below getters and setters
