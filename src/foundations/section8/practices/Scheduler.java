@@ -13,13 +13,14 @@ public class Scheduler {
 
         while (count != 3) {
             System.out.print("\nWhat temperature today?\nEnter the value here: ");
-            Temperature.setTemperature(inputNum.getDouble());
+            double input = inputNum.getDouble();
+            Temperature.setTemperature(input);
 
-            if (Temperature.getTemperature() < 0 && Temperature.getTemperature() != Double.MIN_VALUE) {
+            if (input < 0 && Temperature.getTemperature() != Double.MIN_VALUE) {
                 System.out.println("Too cold to play.");
                 count++;
 
-            } else if (Temperature.getTemperature() >= 0){
+            } else if (input >= 0 && input < 60){
                 count = 0;
                 toss();
                 Temperature.setTemperature(Double.MIN_VALUE);
@@ -44,15 +45,15 @@ public class Scheduler {
 
             if (Team.getList().size() % 2 == 0) {           // If the number of teams is even
                 for (int i = 0; i < Team.getList().size(); i += 2) {
-                    Game game = new Game(Team.getList().get(i), Team.getList().get(i + 1));
+                    new Game(Team.getList().get(i), Team.getList().get(i + 1));
                 }
 
             } else {                                        // If the number of teams is odd
                 for (int i = 0; i < Team.getList().size() - 1; i += 2) {
-                    Game game = new Game(Team.getList().get(i), Team.getList().get(i + 1));
+                    new Game(Team.getList().get(i), Team.getList().get(i + 1));
                 }
 
-                Game game = new Game(Team.getList().get(0), Team.getList().get(Team.getList().size() - 1));
+                new Game(Team.getList().get(0), Team.getList().get(Team.getList().size() - 1));
             }
         }
     }
