@@ -12,10 +12,6 @@ public class Team {
         setName(name);
     }
 
-    protected static List<Team> getList() {
-        return team;
-    }
-
     protected static void addTeam(Team team) {
         if (!Team.team.contains(team)) {
             Team.team.add(team);
@@ -25,6 +21,10 @@ public class Team {
     }
 
     // Below getters, setters and Override
+
+    protected static List<Team> getList() {
+        return team;
+    }
 
     protected String getName() {
         return name;
