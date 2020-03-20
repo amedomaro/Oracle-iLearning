@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Dorm {
     private double x, y;
     private String name, input;
-    private int populations;
+    private int populations, friends;
     private Circle circle;
     private Text text;
     private static List<Dorm> dormList = new ArrayList<>();
@@ -28,24 +28,41 @@ public class Dorm {
         circle.setOpacity(0.7);
 
         text = new Text(getX() - 40, getY() + 20,
-                String.format("     %s\nPopulation: %d",getName(), getPopulations()));
+                String.format("     %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
         text.setFill(Color.DARKRED);
         text.setFont(Font.font("Default", FontWeight.BOLD, 12));
 
         Main.root.getChildren().addAll(circle, text);
 
-        button.setOnAction(event -> activation());
-        circle.setOnMouseClicked(event -> activation());
+        button.setOnAction(event -> addPeople());
+        button.friends.setOnAction(event -> addFriends());
+        circle.setOnMouseClicked(event -> addPeople());
     }
 
-    private void activation() {
+    private void addPeople() {
         input = JOptionPane.showInputDialog(null, "Enter an integer from 0 to 300",
                 String.format("How many people live in %s", getName()), JOptionPane.PLAIN_MESSAGE);
 
         if (input != null) {
             setPopulations(getValue());
             circle.setRadius((double) getPopulations() / 5);
-            text.setText(String.format("    %s\nPopulation: %d",getName(), getPopulations()));
+            text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
+        }
+    }
+
+    private void addFriends() {
+        input = JOptionPane.showInputDialog(null, "Enter an integer from 0 to 300",
+                String.format("How many friends live in %s", getName()), JOptionPane.PLAIN_MESSAGE);
+
+        if (input != null) {
+            setFriends(getValue());
+
+            if (getFriends() > getPopulations()){
+                setPopulations(getFriends());
+                circle.setRadius((double) getPopulations() / 5);
+            }
+
+            text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
         }
     }
 
@@ -102,11 +119,19 @@ public class Dorm {
         this.name = name;
     }
 
-    protected int getPopulations() {
+    private int getPopulations() {
         return populations;
     }
 
     private void setPopulations(int populations) {
         this.populations = populations;
+    }
+
+    private int getFriends() {
+        return friends;
+    }
+
+    private void setFriends(int friends) {
+        this.friends = friends;
     }
 }

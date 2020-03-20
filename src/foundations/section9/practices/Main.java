@@ -13,10 +13,10 @@ public class Main extends Application {
         CampusMap.getCampusMap();  // Singleton
         Scene scene = new Scene(root, 900, 590);
 
-        Dorm.addDormList(new Dorm(196, 381, new MyButton("DORM 1", 100, 440, "DODGERBLUE")));
-        Dorm.addDormList(new Dorm(137, 229, new MyButton("DORM 2", 300, 440, "LIGHTPINK")));
-        Dorm.addDormList(new Dorm(294, 112, new MyButton("DORM 3", 500, 440, "GOLD")));
-        Dorm.addDormList(new Dorm(210, 174, new MyButton("DORM 4", 700, 440, "GREENYELLOW")));
+        Dorm.addDormList(new Dorm(196, 381, new MyButton("DORM 1", 75, 440, "DODGERBLUE")));
+        Dorm.addDormList(new Dorm(137, 229, new MyButton("DORM 2", 275, 440, "LIGHTPINK")));
+        Dorm.addDormList(new Dorm(294, 112, new MyButton("DORM 3", 475, 440, "GOLD")));
+        Dorm.addDormList(new Dorm(210, 174, new MyButton("DORM 4", 675, 440, "GREENYELLOW")));
 
         primaryStage.setTitle("Campus Map");
         primaryStage.setScene(scene);
