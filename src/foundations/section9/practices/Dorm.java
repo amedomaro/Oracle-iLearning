@@ -6,7 +6,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-
 import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -86,7 +85,6 @@ public class Dorm {
 
     // Below getters and setters
 
-
     protected static List<Dorm> getDormList() {
         return dormList;
     }
@@ -95,7 +93,7 @@ public class Dorm {
         Dorm.dormList.add(dorm);
     }
 
-    private double getX() {
+    protected double getX() {
         return x;
     }
 
@@ -103,7 +101,7 @@ public class Dorm {
         this.x = x;
     }
 
-    private double getY() {
+    protected double getY() {
         return y;
     }
 
@@ -119,7 +117,7 @@ public class Dorm {
         this.name = name;
     }
 
-    private int getPopulations() {
+    protected int getPopulations() {
         return populations;
     }
 

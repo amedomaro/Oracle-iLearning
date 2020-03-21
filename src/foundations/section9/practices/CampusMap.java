@@ -8,7 +8,7 @@ public class CampusMap {
     private CampusMap() {
         ImageView mapView = new ImageView(getClass().getResource("Images/map.jpg").toString());
         Main.root.getChildren().add(mapView);
-
+        mapView.toBack();
         campusMap = this;
     }
 
