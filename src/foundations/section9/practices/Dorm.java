@@ -17,6 +17,7 @@ public class Dorm {
     private Circle circle;
     private Text text;
     private static List<Dorm> dormList = new ArrayList<>();
+    public static PositionUpdates updates;
 
     protected Dorm(double x, double y, MyButton button) {
         setX(x);
@@ -44,9 +45,11 @@ public class Dorm {
 
         if (input != null) {
             setPopulations(getValue());
-            circle.setRadius((double) getPopulations() / 5);
+            circle.setRadius((double) getPopulations() / 4);
             text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
         }
+
+        updates.update();
     }
 
     private void addFriends() {
@@ -58,11 +61,13 @@ public class Dorm {
 
             if (getFriends() > getPopulations()){
                 setPopulations(getFriends());
-                circle.setRadius((double) getPopulations() / 5);
+                circle.setRadius((double) getPopulations() / 4);
             }
 
             text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
         }
+
+
     }
 
     private int getValue() {
@@ -121,7 +126,7 @@ public class Dorm {
         return populations;
     }
 
-    private void setPopulations(int populations) {
+    protected void setPopulations(int populations) {
         this.populations = populations;
     }
 

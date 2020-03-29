@@ -24,6 +24,8 @@ public class Main extends Application {
         Dorm.addDormList(new Dorm(294, 112, new MyButton("DORM 3", 475, 440, "GOLD")));
         Dorm.addDormList(new Dorm(210, 174, new MyButton("DORM 4", 675, 440, "GREENYELLOW")));
 
+        Dorm.updates = new Point("Str");
+
         launch(args);
     }
 
