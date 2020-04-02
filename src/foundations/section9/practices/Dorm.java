@@ -6,6 +6,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+
 import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -13,11 +14,11 @@ import java.util.ArrayList;
 public class Dorm {
     private double x, y;
     private String name, input;
-    private int populations = 1, friends;
+    private int populations, friends;
     private Circle circle;
     private Text text;
     private static List<Dorm> dormList = new ArrayList<>();
-    public static PositionUpdates updates;
+    public static PositionUpdates updatePopulation, updateFriends;
 
     protected Dorm(double x, double y, MyButton button) {
         setX(x);
@@ -28,7 +29,7 @@ public class Dorm {
         circle.setOpacity(0.7);
 
         text = new Text(getX() - 40, getY() + 20,
-                String.format("     %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
+                String.format("     %s\nPopulation: %d\n    Friends: %d", getName(), getPopulations(), getFriends()));
         text.setFill(Color.DARKRED);
         text.setFont(Font.font("Default", FontWeight.BOLD, 12));
 
@@ -46,10 +47,10 @@ public class Dorm {
         if (input != null) {
             setPopulations(getValue());
             circle.setRadius((double) getPopulations() / 3);
-            text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
+            text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d", getName(), getPopulations(), getFriends()));
         }
 
-        updates.update();
+        updatePopulation.update();
     }
 
     private void addFriends() {
@@ -59,15 +60,15 @@ public class Dorm {
         if (input != null) {
             setFriends(getValue());
 
-            if (getFriends() > getPopulations()){
+            if (getFriends() > getPopulations()) {
                 setPopulations(getFriends());
                 circle.setRadius((double) getPopulations() / 4);
             }
 
-            text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
+            text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d", getName(), getPopulations(), getFriends()));
         }
 
-
+        updateFriends.update();
     }
 
     private int getValue() {
@@ -126,15 +127,19 @@ public class Dorm {
         return populations;
     }
 
-    protected void setPopulations(int populations) {
-        this.populations = populations;
+    private void setPopulations(int populations) {
+        if (populations > 0) {
+            this.populations = populations;
+        }
     }
 
-    private int getFriends() {
+    protected int getFriends() {
         return friends;
     }
 
     private void setFriends(int friends) {
-        this.friends = friends;
+        if (friends > 0) {
+            this.friends = friends;
+        }
     }
 }

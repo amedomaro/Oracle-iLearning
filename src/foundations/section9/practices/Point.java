@@ -2,20 +2,28 @@ package foundations.section9.practices;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
-public class Point implements PositionUpdates {
+public abstract class Point implements PositionUpdates {
     private double x, y;
     private Circle point;
+    private Text text;
 
     protected Point(String text) {
-        getPosition();
+        getCenter();
         point = new Circle(x, y, 5, Color.RED);
-        Main.root.getChildren().add(point);
+
+        this.text = new Text(x - 40, y + 20, text);
+        this.text.setFill(Color.INDIGO);
+        this.text.setFont(Font.font("Default", FontWeight.BOLD, 12));
+
+        Main.root.getChildren().addAll(point, this.text);
         point.toFront();
     }
 
-    private void getPosition() {
-
+    private void getCenter() {
         for (Dorm dorm : Dorm.getDormList()) {
             x += dorm.getX();
             y += dorm.getY();
@@ -25,28 +33,25 @@ public class Point implements PositionUpdates {
         y /= Dorm.getDormList().size();
     }
 
-    private double adjustment(double coordinateDorm, double coordinatePoint, int population) {
+    // Below getters and setters
 
-        if (coordinateDorm < coordinatePoint) {
-            return coordinateDorm - population;
-        } else if (coordinateDorm > coordinatePoint) {
-            return coordinateDorm + population;
-        } else {
-            return coordinatePoint;
-        }
+    protected Circle getPoint() {
+        return point;
     }
 
-    @Override
-    public void update() {
-        double x = 0, y = 0, population = 0;
+    protected Text getText() {
+        return text;
+    }
 
-        for (Dorm dorm : Dorm.getDormList()) {
-            x += dorm.getX() * dorm.getPopulations();
-            y += dorm.getY() * dorm.getPopulations();
-            population += dorm.getPopulations();
-        }
+    protected void setText(Text text) {
+        this.text = text;
+    }
 
-        point.setCenterX(x / population);
-        point.setCenterY(y / population);
+    protected double getX() {
+        return x;
+    }
+
+    protected double getY() {
+        return y;
     }
 }
