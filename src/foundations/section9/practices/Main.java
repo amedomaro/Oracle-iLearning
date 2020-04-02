@@ -20,12 +20,12 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         Dorm.addDormList(new Dorm(770, 110, new MyButton("DORM 1", 40, 290, "DODGERBLUE")));
-//        Dorm.addDormList(new Dorm(885, 125, new MyButton("DORM 2", 40, 340, "LIGHTPINK")));
-        Dorm.addDormList(new Dorm(1030, 150, new MyButton("DORM 3", 40, 390, "LIGHTPINK")));
+        Dorm.addDormList(new Dorm(885, 125, new MyButton("DORM 2", 40, 340, "LIGHTPINK")));
+        Dorm.addDormList(new Dorm(1030, 150, new MyButton("DORM 3", 40, 390, "GREENYELLOW")));
         Dorm.addDormList(new Dorm(550, 450, new MyButton("DORM 4", 40, 440, "GOLD")));
-        Dorm.addDormList(new Dorm(950, 650, new MyButton("DORM 5", 40, 490, "GREENYELLOW")));
+        Dorm.addDormList(new Dorm(950, 650, new MyButton("DORM 5", 40, 490, "FIREBRICK")));
 
-        Dorm.updates = new Point("Str");
+        Dorm.updates = new Point("All Students");
 
         launch(args);
     }

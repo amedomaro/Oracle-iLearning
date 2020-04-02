@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Dorm {
     private double x, y;
     private String name, input;
-    private int populations, friends;
+    private int populations = 1, friends;
     private Circle circle;
     private Text text;
     private static List<Dorm> dormList = new ArrayList<>();
@@ -45,7 +45,7 @@ public class Dorm {
 
         if (input != null) {
             setPopulations(getValue());
-            circle.setRadius((double) getPopulations() / 4);
+            circle.setRadius((double) getPopulations() / 3);
             text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d",getName(), getPopulations(), getFriends()));
         }
 

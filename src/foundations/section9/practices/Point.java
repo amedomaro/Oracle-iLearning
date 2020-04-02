@@ -4,7 +4,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class Point implements PositionUpdates {
-    private double x, y, startX, startY;
+    private double x, y;
     private Circle point;
 
     protected Point(String text) {
@@ -38,14 +38,15 @@ public class Point implements PositionUpdates {
 
     @Override
     public void update() {
-        double x = 0, y = 0;
+        double x = 0, y = 0, population = 0;
 
         for (Dorm dorm : Dorm.getDormList()) {
-            x += adjustment(dorm.getX(), point.getCenterX(), dorm.getPopulations());
-            y += adjustment(dorm.getY(), point.getCenterY(), dorm.getPopulations());
+            x += dorm.getX() * dorm.getPopulations();
+            y += dorm.getY() * dorm.getPopulations();
+            population += dorm.getPopulations();
         }
 
-        point.setCenterX(x / Dorm.getDormList().size());
-        point.setCenterY(y / Dorm.getDormList().size());
+        point.setCenterX(x / population);
+        point.setCenterY(y / population);
     }
 }
