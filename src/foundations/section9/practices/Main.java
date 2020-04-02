@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         CampusMap.getCampusMap();  // Singleton
-        Scene scene = new Scene(root, 900, 590);
+        Scene scene = new Scene(root, 1198, 755);
         
         primaryStage.setTitle("Campus Map");
         primaryStage.setScene(scene);
@@ -19,10 +19,11 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        Dorm.addDormList(new Dorm(196, 381, new MyButton("DORM 1", 75, 440, "DODGERBLUE")));
-        Dorm.addDormList(new Dorm(137, 229, new MyButton("DORM 2", 275, 440, "LIGHTPINK")));
-        Dorm.addDormList(new Dorm(294, 112, new MyButton("DORM 3", 475, 440, "GOLD")));
-        Dorm.addDormList(new Dorm(210, 174, new MyButton("DORM 4", 675, 440, "GREENYELLOW")));
+        Dorm.addDormList(new Dorm(770, 110, new MyButton("DORM 1", 40, 290, "DODGERBLUE")));
+//        Dorm.addDormList(new Dorm(885, 125, new MyButton("DORM 2", 40, 340, "LIGHTPINK")));
+        Dorm.addDormList(new Dorm(1030, 150, new MyButton("DORM 3", 40, 390, "LIGHTPINK")));
+        Dorm.addDormList(new Dorm(550, 450, new MyButton("DORM 4", 40, 440, "GOLD")));
+        Dorm.addDormList(new Dorm(950, 650, new MyButton("DORM 5", 40, 490, "GREENYELLOW")));
 
         Dorm.updates = new Point("Str");
 

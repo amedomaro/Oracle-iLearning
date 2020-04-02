@@ -6,7 +6,7 @@ public class CampusMap {
     private static CampusMap campusMap = null;
 
     private CampusMap() {
-        ImageView mapView = new ImageView(getClass().getResource("Images/map.jpg").toString());
+        ImageView mapView = new ImageView(getClass().getResource("Images/campus.png").toString());
         Main.root.getChildren().add(mapView);
         mapView.toBack();
         campusMap = this;

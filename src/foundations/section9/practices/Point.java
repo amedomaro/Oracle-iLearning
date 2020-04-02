@@ -3,8 +3,8 @@ package foundations.section9.practices;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class Point implements PositionUpdates{
-    private double x = 0, y = 0;
+public class Point implements PositionUpdates {
+    private double x, y, startX, startY;
     private Circle point;
 
     protected Point(String text) {
@@ -12,7 +12,6 @@ public class Point implements PositionUpdates{
         point = new Circle(x, y, 5, Color.RED);
         Main.root.getChildren().add(point);
         point.toFront();
-        getPosition();
     }
 
     private void getPosition() {
@@ -26,14 +25,15 @@ public class Point implements PositionUpdates{
         y /= Dorm.getDormList().size();
     }
 
-    private double adjustment(double coordinateDorm, double coordinatePoint, int population){
+    private double adjustment(double coordinateDorm, double coordinatePoint, int population) {
 
-        if (coordinateDorm < coordinatePoint){
+        if (coordinateDorm < coordinatePoint) {
             return coordinateDorm - population;
-        }else if (coordinateDorm > coordinatePoint){
+        } else if (coordinateDorm > coordinatePoint) {
             return coordinateDorm + population;
+        } else {
+            return coordinatePoint;
         }
-        return coordinatePoint;
     }
 
     @Override
@@ -41,11 +41,11 @@ public class Point implements PositionUpdates{
         double x = 0, y = 0;
 
         for (Dorm dorm : Dorm.getDormList()) {
-            x += adjustment(dorm.getX(), this.x, dorm.getPopulations());
-            y += adjustment(dorm.getY(), this.y, dorm.getPopulations());
+            x += adjustment(dorm.getX(), point.getCenterX(), dorm.getPopulations());
+            y += adjustment(dorm.getY(), point.getCenterY(), dorm.getPopulations());
         }
 
-        point.setCenterX(x /= Dorm.getDormList().size());
-        point.setCenterY(y /= Dorm.getDormList().size());
+        point.setCenterX(x / Dorm.getDormList().size());
+        point.setCenterY(y / Dorm.getDormList().size());
     }
 }
