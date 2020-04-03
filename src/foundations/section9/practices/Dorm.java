@@ -62,13 +62,14 @@ public class Dorm {
 
             if (getFriends() > getPopulations()) {
                 setPopulations(getFriends());
-                circle.setRadius((double) getPopulations() / 4);
+                circle.setRadius((double) getPopulations() / 3);
             }
 
             text.setText(String.format("    %s\nPopulation: %d\n    Friends: %d", getName(), getPopulations(), getFriends()));
         }
 
         updateFriends.update();
+        updatePopulation.update();
     }
 
     private int getValue() {
@@ -104,7 +105,9 @@ public class Dorm {
     }
 
     private void setX(double x) {
-        this.x = x;
+        if (x > 0) {
+            this.x = x;
+        }
     }
 
     protected double getY() {
@@ -112,7 +115,9 @@ public class Dorm {
     }
 
     private void setY(double y) {
-        this.y = y;
+        if (y > 0) {
+            this.y = y;
+        }
     }
 
     protected String getName() {

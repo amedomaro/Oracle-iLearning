@@ -8,7 +8,6 @@ public class PointFriends extends Point {
         getText().setY(getY() - 10);
     }
 
-
     @Override
     public void update() {
         double x = 0, y = 0, friends = 0;
@@ -21,7 +20,7 @@ public class PointFriends extends Point {
 
         getPoint().setCenterX(x / friends);
         getPoint().setCenterY(y / friends);
-        getText().setX(getPoint().getCenterX() - 40);
-        getText().setY(getPoint().getCenterY() + 20);
+        getText().setX(getPoint().getCenterX() - 20);
+        getText().setY(getPoint().getCenterY() - 10);
     }
 }

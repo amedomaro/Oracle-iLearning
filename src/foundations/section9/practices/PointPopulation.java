@@ -2,7 +2,6 @@ package foundations.section9.practices;
 
 public class PointPopulation extends Point{
 
-
     protected PointPopulation(String text) {
         super(text);
     }

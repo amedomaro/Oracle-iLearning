@@ -43,10 +43,6 @@ public abstract class Point implements PositionUpdates {
         return text;
     }
 
-    protected void setText(Text text) {
-        this.text = text;
-    }
-
     protected double getX() {
         return x;
     }

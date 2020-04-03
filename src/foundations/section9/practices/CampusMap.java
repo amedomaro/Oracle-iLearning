@@ -3,6 +3,7 @@ package foundations.section9.practices;
 import javafx.scene.image.ImageView;
 
 public class CampusMap {
+    // Singleton
     private static CampusMap campusMap = null;
 
     private CampusMap() {
@@ -15,5 +16,4 @@ public class CampusMap {
     protected static void getCampusMap() {
         campusMap = campusMap == null ? new CampusMap() : campusMap;
     }
-
 }
