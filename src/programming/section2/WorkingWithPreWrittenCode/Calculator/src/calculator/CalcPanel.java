@@ -1,4 +1,4 @@
-package calculator;
+package programming.section2.WorkingWithPreWrittenCode.Calculator.src.calculator;
 
 import javax.swing.*;
 import java.awt.Color;
@@ -27,7 +27,6 @@ public class CalcPanel extends JPanel implements ActionListener {
     JButton bplus;
     JButton bMultiplication = new JButton("*");
     JButton bSubtraction = new JButton("/");
-    ;
 
     public CalcPanel() {
         this.setBackground(Color.white);
