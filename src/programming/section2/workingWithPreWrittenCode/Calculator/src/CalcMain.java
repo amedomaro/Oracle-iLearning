@@ -1,10 +1,10 @@
-package programming.section2.WorkingWithPreWrittenCode.Calculator.src;
+package programming.section2.workingWithPreWrittenCode.Calculator.src;
 
 import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import programming.section2.WorkingWithPreWrittenCode.Calculator.src.calculator.CalcPanel;
+import programming.section2.workingWithPreWrittenCode.Calculator.src.calculator.CalcPanel;
 
 
 public class CalcMain {

@@ -1,4 +1,4 @@
-package programming.section2.WorkingWithPreWrittenCode.Calculator.src.calculator;
+package programming.section2.workingWithPreWrittenCode.Calculator.src.calculator;
 
 import javax.swing.*;
 import java.awt.Color;
