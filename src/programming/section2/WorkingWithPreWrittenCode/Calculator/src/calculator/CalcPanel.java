@@ -11,20 +11,21 @@ public class CalcPanel extends JPanel implements ActionListener {
     boolean usingFirst = true;
     double total = 0;
     JTextField display;
-    JButton b1;
-    JButton b2;
-    JButton b3;
-    JButton b4;
-    JButton b5;
-    JButton b6;
-    JButton b7;
-    JButton b8;
-    JButton b9;
-    JButton b0;
-    JButton bdec;
-    JButton bclear;
-    JButton bequals;
-    JButton bplus;
+
+    JButton b1 = new JButton("1");
+    JButton b2 = new JButton("2");
+    JButton b3 = new JButton("3");
+    JButton b4 = new JButton("4");
+    JButton b5 = new JButton("5");
+    JButton b6 = new JButton("6");
+    JButton b7 = new JButton("7");
+    JButton b8 = new JButton("8");
+    JButton b9 = new JButton("9");
+    JButton b0 = new JButton("0");
+    JButton bDec = new JButton(".");
+    JButton bClear = new JButton("C");
+    JButton bEquals = new JButton("=");
+    JButton bPlus = new JButton("+");
     JButton bMultiplication = new JButton("*");
     JButton bSubtraction = new JButton("/");
 
@@ -33,27 +34,12 @@ public class CalcPanel extends JPanel implements ActionListener {
         setLayout(null);
         display = new JTextField();
 
-        b1 = new JButton("1");
-        b2 = new JButton("2");
-        b3 = new JButton("3");
-        b4 = new JButton("4");
-        b5 = new JButton("5");
-        b6 = new JButton("6");
-        b7 = new JButton("7");
-        b8 = new JButton("8");
-        b9 = new JButton("9");
-        b0 = new JButton("0");
-        bdec = new JButton(".");
-        bclear = new JButton("C");
-        bequals = new JButton("=");
-        bplus = new JButton("+");
-
         display.setBounds(0, 0, 205, 50);
 
         b1.setBounds(0, 200, 50, 50);
         b2.setBounds(50, 200, 50, 50);
         b3.setBounds(100, 200, 50, 50);
-        bplus.setBounds(154, 200, 50, 50);
+        bPlus.setBounds(154, 200, 50, 50);
 
         b4.setBounds(0, 150, 50, 50);
         b5.setBounds(50, 150, 50, 50);
@@ -66,10 +52,9 @@ public class CalcPanel extends JPanel implements ActionListener {
         bSubtraction.setBounds(154, 100, 50, 50);
 
         b0.setBounds(0, 250, 50, 50);
-        bdec.setBounds(50, 250, 50, 50);
-        bclear.setBounds(100, 250, 50, 50);
-        bequals.setBounds(154, 250, 50, 50);
-
+        bDec.setBounds(50, 250, 50, 50);
+        bClear.setBounds(100, 250, 50, 50);
+        bEquals.setBounds(154, 250, 50, 50);
 
         add(b1);
         add(b2);
@@ -81,11 +66,11 @@ public class CalcPanel extends JPanel implements ActionListener {
         add(b8);
         add(b9);
         add(b0);
-        add(bdec);
+        add(bDec);
         add(display);
-        add(bclear);
-        add(bequals);
-        add(bplus);
+        add(bClear);
+        add(bEquals);
+        add(bPlus);
         add(bMultiplication);
         add(bSubtraction);
 
@@ -99,12 +84,12 @@ public class CalcPanel extends JPanel implements ActionListener {
         b8.addActionListener(this);
         b9.addActionListener(this);
         b0.addActionListener(this);
-        bequals.addActionListener(this);
-        bplus.addActionListener(this);
+        bEquals.addActionListener(this);
+        bPlus.addActionListener(this);
         bMultiplication.addActionListener(this);
         bSubtraction.addActionListener(this);
-        bclear.addActionListener(this);
-        bdec.addActionListener(this);
+        bClear.addActionListener(this);
+        bDec.addActionListener(this);
 
     }
 
@@ -113,8 +98,8 @@ public class CalcPanel extends JPanel implements ActionListener {
         if (s.equals("1") || s.equals("2") || s.equals("3") || s.equals("4") ||
                 s.equals("5") || s.equals("6") || s.equals("7") || s.equals("8") ||
                 s.equals("9") || s.equals("0") || s.equals(".")) {
-            if (usingFirst) {
 
+            if (usingFirst) {
                 num1 = num1 + s;
                 display.setText(num1);
             } else {
@@ -122,10 +107,24 @@ public class CalcPanel extends JPanel implements ActionListener {
                 display.setText(num2);
             }
         }
+
+
         if (s.equals("+")) {
             usingFirst = false;
             operator = "+";
         }
+
+        if (s.equals("*")) {
+            usingFirst = false;
+            operator = "*";
+        }
+
+        if (s.equals("/")) {
+            usingFirst = false;
+            operator = "/";
+        }
+
+
         if (s.equals("=")) {
 
             switch (operator) {
@@ -143,12 +142,12 @@ public class CalcPanel extends JPanel implements ActionListener {
                     break;
             }
 
-
             usingFirst = true;
             num1 = "";
             num2 = "";
             operator = "";
         }
+
         if (s.equals("C")) {
             display.setText("");
             usingFirst = true;

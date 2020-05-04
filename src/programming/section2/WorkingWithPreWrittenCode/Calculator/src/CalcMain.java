@@ -20,7 +20,6 @@ public class CalcMain {
 		pane.add(myPanel);
 		
 		theGUI.setVisible(true);
-
 	}
 
 }
