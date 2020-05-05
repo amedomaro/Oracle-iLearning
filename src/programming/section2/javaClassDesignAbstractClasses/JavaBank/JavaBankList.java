@@ -16,9 +16,7 @@ public class JavaBankList extends JFrame {
      */
     private static final long serialVersionUID = 1L;
     // Make these variables publicly available
-    public String Name;
-    public int AccountNum;
-    public int Balance;
+    private String name;
 
     private JTextField NameJTextField;
     private JTextField AccountNumJTextField;
@@ -151,7 +149,8 @@ public class JavaBankList extends JFrame {
         // anonymous inner class
         // event handler called when TransactionJButton
         // is clicked
-        transactionJButton.addActionListener(event -> TransactionJButtonActionPerformed(event)); // end call to addActionListener
+        transactionJButton.addActionListener(event -> TransactionJButtonActionPerformed(event));
+        // end call to addActionListener
 
         // set up DisplayJButton
         // JButton to display account
@@ -199,32 +198,37 @@ public class JavaBankList extends JFrame {
 
         displayJTextArea.setText("");
 
-        Name = "";
+        name = "";
 
         //Get Name from Text Field
-        Name = NameJTextField.getText();
+        name = NameJTextField.getText();
 
-        //Get Accountnum from Text Field and convert to int unless blank then set to 0
+        //Get AccountNum from Text Field and convert to int unless blank then set to 0
+        int accountNum;
+
         if (AccountNumJTextField.getText().equals("0")) {
-            AccountNum = 0;
+            accountNum = 0;
         } else {
-            AccountNum = Integer.parseInt(AccountNumJTextField.getText());
+            accountNum = Integer.parseInt(AccountNumJTextField.getText());
         }
 
         //Get Balance from Text Field and convert to int unless blank then set to 0
+        int balance;
+
         if (BalanceJTextField.getText().equals("0")) {
-            Balance = 0;
+            balance = 0;
         } else {
-            Balance = Integer.parseInt(BalanceJTextField.getText());
+            balance = Integer.parseInt(BalanceJTextField.getText());
         }
 
-        if ((!Name.equals("")) & (AccountNum != 0)) {
+        if ((!name.equals("")) & (accountNum != 0)) {
             //add a new account to the list using the Account constructor
-            Accounts.add(new Account(Name, AccountNum, Balance));
+            Accounts.add(new Account(name, accountNum, balance));
             //Set a temp Account for display purposes
             Account tempAccount = Accounts.get(Accounts.size() - 1);
             //Display tempAccount
-            displayJTextArea.setText(Accounts.size() + " " + tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
+            displayJTextArea.setText(Accounts.size() + " " + tempAccount.getAccountName() + " "
+                    + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
 
         } else {
             displayJTextArea.setText("Both the Name field and Account Number must be completed");
@@ -270,14 +274,16 @@ public class JavaBankList extends JFrame {
                 if ((tempAccount.getAccountNum() == Accountnum) && (Deposit > 0)) {
                     tempAccount.setBalance(tempAccount.getBalance() + Deposit);
                     Accounts.set(i, tempAccount);
-                    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
+                    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " "
+                            + tempAccount.getBalance());
 
                 }
                 // if account number matches and withdrawal field has entry then withdraw from account
                 if ((tempAccount.getAccountNum() == Accountnum) && (Withdraw > 0)) {
                     tempAccount.setBalance(tempAccount.getBalance() - Withdraw);
                     Accounts.set(i, tempAccount);
-                    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
+                    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " "
+                            + tempAccount.getBalance());
                 }
             }
         }
@@ -291,14 +297,15 @@ public class JavaBankList extends JFrame {
     }
 
     private void DisplayJButtonActionPerformed(ActionEvent event) {
-        Name = NameJTextField.getText();
+        name = NameJTextField.getText();
         displayJTextArea.setText("");
 
         if (Accounts.isEmpty()) {
             displayJTextArea.setText("No Accounts currently created");
         } else {
             for (Account account : Accounts) {
-                displayJTextArea.append(account.getAccountName() + " " + account.getAccountNum() + " " + account.getBalance() + "\n");
+                displayJTextArea.append(account.getAccountName() + " " + account.getAccountNum() + " "
+                        + account.getBalance() + "\n");
             }
         }
         // clear other JTextFields for new data

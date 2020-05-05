@@ -16,18 +16,18 @@ public class CreditAccount extends Account {
         this.creditLimit = credit;
     }
 
-    //modifier to set the account creditlimit
-    public void setCreditLimit(int num) {
-        creditLimit = num;
+    // Below getters, setters and override
+    protected void setCreditLimit(int num) {
+        this.creditLimit = num;
     }
 
-    //accessor to get the account creditlimit
-    public int getCreditLimit() {
+    protected int getCreditLimit() {
         return creditLimit;
     }
 
-    //print method
+    @Override
     public void print() {
-        System.out.printf("%s %d %d %d\n", getAccountName(), getAccountNum(), getBalance(), creditLimit);
+        System.out.printf("%-15s ID:%-8d balance:%-8d creditLimit:%d\n", getAccountName(), getAccountNum(),
+                getBalance(), creditLimit);
     }
 }

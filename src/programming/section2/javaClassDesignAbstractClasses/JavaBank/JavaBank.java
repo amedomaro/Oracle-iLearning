@@ -11,13 +11,10 @@ public class JavaBank extends JFrame {
     /**
      *
      */
+
     private static final long serialVersionUID = 1L;
     // Make these variables publicly available
-    public String Name;
-    public int AccountNum;
-    public int Balance;
-
-
+    private String name;
     private JTextField NameJTextField;
     private JTextField AccountNumJTextField;
     private JTextField BalanceJTextField;
@@ -38,7 +35,6 @@ public class JavaBank extends JFrame {
     static int noAccounts = 0;
 
     // constructor
-
     public JavaBank() {
         for (int i = 0; i < 10; i++) {
             AccountNames[i] = "EMPTY";
@@ -209,35 +205,34 @@ public class JavaBank extends JFrame {
         // System.out.println("Create Account Button Clicked");
 
         displayJTextArea.setText("");
-
-        Name = "";
-
-        //Get Name from Text Field
-        Name = NameJTextField.getText();
+        name = NameJTextField.getText();
 
         //Get AccountNum from Text Field and convert to int unless blank then set to 0
+        int accountNum;
         if (AccountNumJTextField.getText().equals("0")) {
-            AccountNum = 0;
+            accountNum = 0;
         } else {
-            AccountNum = Integer.parseInt(AccountNumJTextField.getText());
+            accountNum = Integer.parseInt(AccountNumJTextField.getText());
         }
 
         //Get Balance from Text Field and convert to int unless blank then set to 0
+        int balance;
         if (BalanceJTextField.getText().equals("0")) {
-            Balance = 0;
+            balance = 0;
         } else {
-            Balance = Integer.parseInt(BalanceJTextField.getText());
+            balance = Integer.parseInt(BalanceJTextField.getText());
         }
 
         //int emptyAccount = 11;
 
-        if ((noAccounts <= 9) & (!Name.equals("")) & (AccountNum != 0)) {
-            myAccounts[noAccounts] = new Account(Name, AccountNum, Balance);
+        if ((noAccounts <= 9) & (!name.equals("")) & (accountNum != 0)) {
+            myAccounts[noAccounts] = new Account(name, accountNum, balance);
             AccountNames[noAccounts] = "USED";
             //System.out.println(myAccounts[noAccounts].getAccountName());
             //emptyAccount = i;
 
-            displayJTextArea.setText(myAccounts[noAccounts].getAccountName() + " " + myAccounts[noAccounts].getAccountNum() + " " + myAccounts[noAccounts].getBalance());
+            displayJTextArea.setText(myAccounts[noAccounts].getAccountName() + " "
+                    + myAccounts[noAccounts].getAccountNum() + " " + myAccounts[noAccounts].getBalance());
             noAccounts++;
             System.out.println(noAccounts);
         } else {
@@ -281,21 +276,22 @@ public class JavaBank extends JFrame {
         if (noAccounts == 0) {
             displayJTextArea.setText("No Accounts currently created");
         } else {
-
             // get user input
-            int Accountnum = Integer.parseInt(AccountNumJTextField.getText());
+            int AccountNum = Integer.parseInt(AccountNumJTextField.getText());
             int Deposit = Integer.parseInt(DepositJTextField.getText());
             int Withdraw = Integer.parseInt(WithdrawJTextField.getText());
 
             for (int i = 0; i < noAccounts; i++) {
-                if ((myAccounts[i].getAccountNum() == Accountnum) && (Deposit > 0)) {
+                if ((myAccounts[i].getAccountNum() == AccountNum) && (Deposit > 0)) {
                     myAccounts[i].setBalance(myAccounts[i].getBalance() + Deposit);
-                    displayJTextArea.setText(myAccounts[i].getAccountName() + " " + myAccounts[i].getAccountNum() + " " + myAccounts[i].getBalance());
+                    displayJTextArea.setText(myAccounts[i].getAccountName() + " " + myAccounts[i].getAccountNum() + " "
+                            + myAccounts[i].getBalance());
                 }
 
-                if ((myAccounts[i].getAccountNum() == Accountnum) && (Withdraw > 0)) {
+                if ((myAccounts[i].getAccountNum() == AccountNum) && (Withdraw > 0)) {
                     myAccounts[i].setBalance(myAccounts[i].getBalance() - Withdraw);
-                    displayJTextArea.setText(myAccounts[i].getAccountName() + " " + myAccounts[i].getAccountNum() + " " + myAccounts[i].getBalance());
+                    displayJTextArea.setText(myAccounts[i].getAccountName() + " " + myAccounts[i].getAccountNum() + " "
+                            + myAccounts[i].getBalance());
                 }
             }
         }
@@ -311,14 +307,15 @@ public class JavaBank extends JFrame {
 
     private void DisplayJButtonActionPerformed(ActionEvent event) {
 
-        Name = NameJTextField.getText();
+        name = NameJTextField.getText();
         displayJTextArea.setText("");
 
         if (noAccounts == 0) {
             displayJTextArea.setText("No Accounts currently created");
         } else {
             for (int i = 0; i < noAccounts; i++) {
-                displayJTextArea.append(myAccounts[i].getAccountName() + " " + myAccounts[i].getAccountNum() + " " + myAccounts[i].getBalance() + "\n");
+                displayJTextArea.append(myAccounts[i].getAccountName() + " " + myAccounts[i].getAccountNum() + " "
+                        + myAccounts[i].getBalance() + "\n");
             }
         }
 

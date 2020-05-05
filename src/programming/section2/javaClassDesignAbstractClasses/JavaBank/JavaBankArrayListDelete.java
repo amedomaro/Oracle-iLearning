@@ -12,11 +12,10 @@ public class JavaBankArrayListDelete extends JFrame {
     /**
      *
      */
+
     private static final long serialVersionUID = 1L;
     // Make these variables publicly available
-    public String Name;
-    public int AccountNum;
-    public int Balance;
+    private String name;
 
     private JTextField NameJTextField;
     private JTextField AccountNumJTextField;
@@ -195,32 +194,37 @@ public class JavaBankArrayListDelete extends JFrame {
         // System.out.println("Create Account Button Clicked");
         displayJTextArea.setText("");
 
-        Name = "";
+        name = "";
 
         //Get Name from Text Field
-        Name = NameJTextField.getText();
+        name = NameJTextField.getText();
 
         //Get AccountNum from Text Field and convert to int unless blank then set to 0
+        int accountNum;
+
         if (AccountNumJTextField.getText().equals("0")) {
-            AccountNum = 0;
+            accountNum = 0;
         } else {
-            AccountNum = Integer.parseInt(AccountNumJTextField.getText());
+            accountNum = Integer.parseInt(AccountNumJTextField.getText());
         }
 
         //Get Balance from Text Field and convert to int unless blank then set to 0
+        int balance;
+
         if (BalanceJTextField.getText().equals("0")) {
-            Balance = 0;
+            balance = 0;
         } else {
-            Balance = Integer.parseInt(BalanceJTextField.getText());
+            balance = Integer.parseInt(BalanceJTextField.getText());
         }
 
-        if ((!Name.equals("")) & (AccountNum != 0)) {
+        if ((!name.equals("")) & (accountNum != 0)) {
             //add a new account to the list using the Account constructor
-            Accounts.add(new Account(Name, AccountNum, Balance));
+            Accounts.add(new Account(name, accountNum, balance));
             //Set a temp Account for display purposes
             Account tempAccount = Accounts.get(Accounts.size() - 1);
             //Display tempAccount
-            displayJTextArea.setText(Accounts.size() + " " + tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
+            displayJTextArea.setText(Accounts.size() + " " + tempAccount.getAccountName() + " "
+                    + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
 
         } else {
             displayJTextArea.setText("Both the Name field and Account Number must be completed");
@@ -240,12 +244,12 @@ public class JavaBankArrayListDelete extends JFrame {
             displayJTextArea.setText("No Accounts currently created");
         } else {
             // get user input
-            int Accountnum = Integer.parseInt(AccountNumJTextField.getText());
+            int AccountNum = Integer.parseInt(AccountNumJTextField.getText());
 
             for (int i = 0; i < Accounts.size(); i++) {
                 // get the element
                 Account tempAccount = Accounts.get(i);
-                if ((tempAccount.getAccountNum() == Accountnum)) {
+                if ((tempAccount.getAccountNum() == AccountNum)) {
                     Accounts.remove(i);
                     //break;
                 }
@@ -266,26 +270,27 @@ public class JavaBankArrayListDelete extends JFrame {
         } else {
 
             // get user input
-            int Accountnum = Integer.parseInt(AccountNumJTextField.getText());
-            int Deposit = Integer.parseInt(DepositJTextField.getText());
-            int Withdraw = Integer.parseInt(WithdrawJTextField.getText());
+            int accountNum = Integer.parseInt(AccountNumJTextField.getText());
+            int deposit = Integer.parseInt(DepositJTextField.getText());
+            int withdraw = Integer.parseInt(WithdrawJTextField.getText());
 
 
             for (int i = 0; i < Accounts.size(); i++) {
                 // get the element and set to TempAccount
                 Account tempAccount = Accounts.get(i);
                 // if account number matches and deposit field has entry then deposit in account
-                if ((tempAccount.getAccountNum() == Accountnum) && (Deposit > 0)) {
-                    tempAccount.setBalance(tempAccount.getBalance() + Deposit);
+                if ((tempAccount.getAccountNum() == accountNum) && (deposit > 0)) {
+                    tempAccount.setBalance(tempAccount.getBalance() + deposit);
                     Accounts.set(i, tempAccount);
-                    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
-
+                    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " "
+                            + tempAccount.getBalance());
                 }
                 // if account number matches and withdrawal field has entry then withdraw from account
-                if ((tempAccount.getAccountNum() == Accountnum) && (Withdraw > 0)) {
-                    tempAccount.setBalance(tempAccount.getBalance() - Withdraw);
+                if ((tempAccount.getAccountNum() == accountNum) && (withdraw > 0)) {
+                    tempAccount.setBalance(tempAccount.getBalance() - withdraw);
                     Accounts.set(i, tempAccount);
-                    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
+                    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " "
+                            + tempAccount.getBalance());
                 }
             }
         }
@@ -299,14 +304,15 @@ public class JavaBankArrayListDelete extends JFrame {
     }
 
     private void DisplayJButtonActionPerformed(ActionEvent event) {
-        Name = NameJTextField.getText();
+        name = NameJTextField.getText();
         displayJTextArea.setText("");
 
         if (Accounts.isEmpty()) {
             displayJTextArea.setText("No Accounts currently created");
         } else {
             for (Account account : Accounts) {
-                displayJTextArea.append(account.getAccountName() + " " + account.getAccountNum() + " " + account.getBalance() + "\n");
+                displayJTextArea.append(account.getAccountName() + " " + account.getAccountNum() + " "
+                        + account.getBalance() + "\n");
             }
         }
         // clear other JTextFields for new data
