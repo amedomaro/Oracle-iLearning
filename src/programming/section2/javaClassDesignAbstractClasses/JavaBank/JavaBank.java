@@ -18,56 +18,21 @@ public class JavaBank extends JFrame {
     public int Balance;
 
 
-    // JPanel for user inputs
-    private JPanel inputDetailJPanel;
-
-    // JLabel and JTextField for account name
-    private JLabel NameJLabel;
     private JTextField NameJTextField;
-
-    // JLabel and JTextField for account number
-    private JLabel AccountNumJLabel;
     private JTextField AccountNumJTextField;
-
-    // JLabel and JTextField for balance
-    private JLabel BalanceJLabel;
     private JTextField BalanceJTextField;
-
-    // JLabel and JTextField for withdraw
-    private JLabel DepositJLabel;
     private JTextField DepositJTextField;
-
-    // JLabel and JTextField for Withdraw
-    private JLabel WithdrawJLabel;
     private JTextField WithdrawJTextField;
-
-    // JButton to create account
-    private JButton CreateAccountJButton;
-
-    // JButton to delete account
-    private JButton DeleteAccountJButton;
-
-    // JButton to make transaction
-    private JButton TransactionJButton;
-
-    // JButton to display account
-    private JButton DisplayJButton;
-
-    // JLabel and JTextArea to display account details
-    private JLabel displayJLabel;
     private static JTextArea displayJTextArea;
-
 
     // constants
     //public  final static Maximum Accounts that can be created;
     public final static int MaxAccounts = 10;
 
-
     // one-dimensional array to store Account names as Empty or Used
     static String[] AccountNames = new String[MaxAccounts];
 
     // two-dimensional array to store Account details
-
     static Account[] myAccounts = new Account[MaxAccounts];
 
     static int noAccounts = 0;
@@ -78,7 +43,6 @@ public class JavaBank extends JFrame {
         for (int i = 0; i < 10; i++) {
             AccountNames[i] = "EMPTY";
             //System.out.println(AccountNames[i]);
-
         }
         createUserInterface();
     }
@@ -93,17 +57,19 @@ public class JavaBank extends JFrame {
         contentPane.setLayout(null);
 
         // set up inputDetailJPanel
-        inputDetailJPanel = new JPanel();
+        // JPanel for user inputs
+        JPanel inputDetailJPanel = new JPanel();
         inputDetailJPanel.setBounds(16, 16, 208, 250);
         inputDetailJPanel.setBorder(new TitledBorder("Input Details"));
         inputDetailJPanel.setLayout(null);
         contentPane.add(inputDetailJPanel);
 
         // set up NameJLabel
-        NameJLabel = new JLabel();
-        NameJLabel.setBounds(8, 32, 90, 23);
-        NameJLabel.setText("Name:");
-        inputDetailJPanel.add(NameJLabel);
+        // JLabel and JTextField for account name
+        JLabel nameJLabel = new JLabel();
+        nameJLabel.setBounds(8, 32, 90, 23);
+        nameJLabel.setText("Name:");
+        inputDetailJPanel.add(nameJLabel);
 
         // set up NameJTextField
         NameJTextField = new JTextField();
@@ -112,10 +78,11 @@ public class JavaBank extends JFrame {
         inputDetailJPanel.add(NameJTextField);
 
         // set up AccountNumJLabel
-        AccountNumJLabel = new JLabel();
-        AccountNumJLabel.setBounds(8, 56, 100, 23);
-        AccountNumJLabel.setText("Account Number:");
-        inputDetailJPanel.add(AccountNumJLabel);
+        // JLabel and JTextField for account number
+        JLabel accountNumJLabel = new JLabel();
+        accountNumJLabel.setBounds(8, 56, 100, 23);
+        accountNumJLabel.setText("Account Number:");
+        inputDetailJPanel.add(accountNumJLabel);
 
         // set up AccountNumTextField
         AccountNumJTextField = new JTextField();
@@ -124,10 +91,11 @@ public class JavaBank extends JFrame {
         inputDetailJPanel.add(AccountNumJTextField);
 
         // set up BalanceJLabel
-        BalanceJLabel = new JLabel();
-        BalanceJLabel.setBounds(8, 80, 60, 23);
-        BalanceJLabel.setText("Balance:");
-        inputDetailJPanel.add(BalanceJLabel);
+        // JLabel and JTextField for balance
+        JLabel balanceJLabel = new JLabel();
+        balanceJLabel.setBounds(8, 80, 60, 23);
+        balanceJLabel.setText("Balance:");
+        inputDetailJPanel.add(balanceJLabel);
 
         // set up BalanceTextField
         BalanceJTextField = new JTextField();
@@ -136,10 +104,11 @@ public class JavaBank extends JFrame {
         inputDetailJPanel.add(BalanceJTextField);
 
         // set up DepositJLabel
-        DepositJLabel = new JLabel();
-        DepositJLabel.setBounds(8, 104, 80, 23);
-        DepositJLabel.setText("Deposit:");
-        inputDetailJPanel.add(DepositJLabel);
+        // JLabel and JTextField for withdraw
+        JLabel depositJLabel = new JLabel();
+        depositJLabel.setBounds(8, 104, 80, 23);
+        depositJLabel.setText("Deposit:");
+        inputDetailJPanel.add(depositJLabel);
 
         // set up DepositJTextField
         DepositJTextField = new JTextField();
@@ -148,10 +117,11 @@ public class JavaBank extends JFrame {
         inputDetailJPanel.add(DepositJTextField);
 
         // set up WithdrawJLabel
-        WithdrawJLabel = new JLabel();
-        WithdrawJLabel.setBounds(8, 128, 60, 23);
-        WithdrawJLabel.setText("Withdraw:");
-        inputDetailJPanel.add(WithdrawJLabel);
+        // JLabel and JTextField for Withdraw
+        JLabel withdrawJLabel = new JLabel();
+        withdrawJLabel.setBounds(8, 128, 60, 23);
+        withdrawJLabel.setText("Withdraw:");
+        inputDetailJPanel.add(withdrawJLabel);
 
         // set up WithdrawJTextField
         WithdrawJTextField = new JTextField();
@@ -160,50 +130,55 @@ public class JavaBank extends JFrame {
         inputDetailJPanel.add(WithdrawJTextField);
 
         // set up CreateAccountButton
-        CreateAccountJButton = new JButton();
-        CreateAccountJButton.setBounds(112, 152, 80, 24);
-        CreateAccountJButton.setText("Create");
-        inputDetailJPanel.add(CreateAccountJButton);
+        // JButton to create account
+        JButton createAccountJButton = new JButton();
+        createAccountJButton.setBounds(112, 152, 80, 24);
+        createAccountJButton.setText("Create");
+        inputDetailJPanel.add(createAccountJButton);
         // event handler called when CreateAccountJButton
         // is clicked
-        CreateAccountJButton.addActionListener(event -> CreateAccountJButtonActionPerformed(event));
+        createAccountJButton.addActionListener(event -> CreateAccountJButtonActionPerformed(event));
         // end call to addActionListener
 
         // set up DeleteAccountButton
-        DeleteAccountJButton = new JButton();
-        DeleteAccountJButton.setBounds(16, 152, 80, 24);
-        DeleteAccountJButton.setText("Delete");
-        inputDetailJPanel.add(DeleteAccountJButton);
+        // JButton to delete account
+        JButton deleteAccountJButton = new JButton();
+        deleteAccountJButton.setBounds(16, 152, 80, 24);
+        deleteAccountJButton.setText("Delete");
+        inputDetailJPanel.add(deleteAccountJButton);
         // anonymous inner class
         // event handler called when DeleteAccountJButton
         // is clicked
-        DeleteAccountJButton.addActionListener(event -> DeleteAccountJButtonActionPerformed(event));
+        deleteAccountJButton.addActionListener(event -> DeleteAccountJButtonActionPerformed(event));
         // end call to addActionListener
 
         // set up TransactionJButton
-        TransactionJButton = new JButton();
-        TransactionJButton.setBounds(16, 180, 176, 24);
-        TransactionJButton.setText("Make Transaction");
-        inputDetailJPanel.add(TransactionJButton);
+        // JButton to make transaction
+        JButton transactionJButton = new JButton();
+        transactionJButton.setBounds(16, 180, 176, 24);
+        transactionJButton.setText("Make Transaction");
+        inputDetailJPanel.add(transactionJButton);
         // anonymous inner class
         // event handler called when TransactionJButton
         // is clicked
-        TransactionJButton.addActionListener(event -> TransactionJButtonActionPerformed(event));
+        transactionJButton.addActionListener(event -> TransactionJButtonActionPerformed(event));
         // end call to addActionListener
 
         // set up DisplayJButton
-        DisplayJButton = new JButton();
-        DisplayJButton.setBounds(16, 208, 176, 24);
-        DisplayJButton.setText("Display Accounts");
-        inputDetailJPanel.add(DisplayJButton);
+        // JButton to display account
+        JButton displayJButton = new JButton();
+        displayJButton.setBounds(16, 208, 176, 24);
+        displayJButton.setText("Display Accounts");
+        inputDetailJPanel.add(displayJButton);
         // anonymous inner class
         // event handler called when TransactionJButton
         // is clicked
-        DisplayJButton.addActionListener(event -> DisplayJButtonActionPerformed(event));
+        displayJButton.addActionListener(event -> DisplayJButtonActionPerformed(event));
         // end call to addActionListener
 
         // set up displayJLabel
-        displayJLabel = new JLabel();
+        // JLabel and JTextArea to display account details
+        JLabel displayJLabel = new JLabel();
         displayJLabel.setBounds(240, 16, 150, 23);
         displayJLabel.setText("Account Details:");
         contentPane.add(displayJLabel);
@@ -228,7 +203,6 @@ public class JavaBank extends JFrame {
         setSize(670, 308); // set window size
         setVisible(true); // display window
 
-
     } // end method createUserInterface
 
     private void CreateAccountJButtonActionPerformed(ActionEvent event) {
@@ -236,19 +210,17 @@ public class JavaBank extends JFrame {
 
         displayJTextArea.setText("");
 
-
         Name = "";
 
         //Get Name from Text Field
         Name = NameJTextField.getText();
 
-        //Get Accountnum from Text Field and convert to int unless blank then set to 0
+        //Get AccountNum from Text Field and convert to int unless blank then set to 0
         if (AccountNumJTextField.getText().equals("0")) {
             AccountNum = 0;
         } else {
             AccountNum = Integer.parseInt(AccountNumJTextField.getText());
         }
-
 
         //Get Balance from Text Field and convert to int unless blank then set to 0
         if (BalanceJTextField.getText().equals("0")) {
@@ -257,14 +229,12 @@ public class JavaBank extends JFrame {
             Balance = Integer.parseInt(BalanceJTextField.getText());
         }
 
-
         //int emptyAccount = 11;
-
 
         if ((noAccounts <= 9) & (!Name.equals("")) & (AccountNum != 0)) {
             myAccounts[noAccounts] = new Account(Name, AccountNum, Balance);
             AccountNames[noAccounts] = "USED";
-            //System.out.println(myAccounts[noAccounts].getaccountname());
+            //System.out.println(myAccounts[noAccounts].getAccountName());
             //emptyAccount = i;
 
             displayJTextArea.setText(myAccounts[noAccounts].getAccountName() + " " + myAccounts[noAccounts].getAccountNum() + " " + myAccounts[noAccounts].getBalance());
@@ -285,12 +255,11 @@ public class JavaBank extends JFrame {
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");
-
     }
 
     private void DeleteAccountJButtonActionPerformed(ActionEvent event) {
 
-        displayJTextArea.setText("Oops this isnt coded in this version!");
+        displayJTextArea.setText("Oops this isn`t coded in this version!");
         //Name = NameJTextField.getText();
         //System.out.println("Delete Account: " + Name);
 
@@ -303,12 +272,9 @@ public class JavaBank extends JFrame {
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");
-
     }
 
-
     private void TransactionJButtonActionPerformed(ActionEvent event) {
-
 
         displayJTextArea.setText("");
 
@@ -321,7 +287,6 @@ public class JavaBank extends JFrame {
             int Deposit = Integer.parseInt(DepositJTextField.getText());
             int Withdraw = Integer.parseInt(WithdrawJTextField.getText());
 
-
             for (int i = 0; i < noAccounts; i++) {
                 if ((myAccounts[i].getAccountNum() == Accountnum) && (Deposit > 0)) {
                     myAccounts[i].setBalance(myAccounts[i].getBalance() + Deposit);
@@ -332,7 +297,6 @@ public class JavaBank extends JFrame {
                     myAccounts[i].setBalance(myAccounts[i].getBalance() - Withdraw);
                     displayJTextArea.setText(myAccounts[i].getAccountName() + " " + myAccounts[i].getAccountNum() + " " + myAccounts[i].getBalance());
                 }
-
             }
         }
 
@@ -342,7 +306,6 @@ public class JavaBank extends JFrame {
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");
-
 
     }
 
@@ -355,22 +318,17 @@ public class JavaBank extends JFrame {
             displayJTextArea.setText("No Accounts currently created");
         } else {
             for (int i = 0; i < noAccounts; i++) {
-
                 displayJTextArea.append(myAccounts[i].getAccountName() + " " + myAccounts[i].getAccountNum() + " " + myAccounts[i].getBalance() + "\n");
-
-
             }
         }
+
         // clear other JTextFields for new data
         NameJTextField.setText(" ");
         AccountNumJTextField.setText("0");
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");
-
-
     }
-
 
     public static void main(String[] args) {
         // Populate arrays with the word EMPTY

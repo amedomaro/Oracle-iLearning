@@ -30,12 +30,12 @@ public class Account {
         balance = balance - amt;
     }
 
-    //modifier to set the accountname
+    //modifier to set the accountName
     public void setAccountName(String name) {
         accountName = name;
     }
 
-    //modifier to set the accountnumber
+    //modifier to set the accountNumber
     public void setAccountNum(int num) {
         accountNum = num;
     }
@@ -45,15 +45,13 @@ public class Account {
         balance = num;
     }
 
-    //accessor to get the accountname
+    //accessor to get the accountName
     public String getAccountName() {
-
         return accountName;
     }
 
-    //accessor to get the accountnumber
+    //accessor to get the accountNumber
     public int getAccountNum() {
-
         return accountNum;
     }
 
@@ -64,6 +62,6 @@ public class Account {
 
     //print method
     public void print() {
-        System.out.printf("%s %d %d\n" ,accountName, accountNum, balance);
+        System.out.printf("%s %d %d\n", accountName, accountNum, balance);
     }
 }

@@ -14,20 +14,17 @@ public class CreditAccount extends Account {
     CreditAccount(String name, int num, int amt, int credit) {
         super(name, num, amt);
         this.creditLimit = credit;
-
     }
 
     //modifier to set the account creditlimit
-    public void setcreditlimit(int num) {
+    public void setCreditLimit(int num) {
         creditLimit = num;
     }
 
     //accessor to get the account creditlimit
-    public int getcreditlimit() {
-
+    public int getCreditLimit() {
         return creditLimit;
     }
-
 
     //print method
     public void print() {
