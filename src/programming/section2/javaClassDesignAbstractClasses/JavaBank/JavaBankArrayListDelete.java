@@ -14,7 +14,6 @@ public class JavaBankArrayListDelete extends JFrame {
      */
 
     private static final long serialVersionUID = 1L;
-    // Make these variables publicly available
     private String name;
 
     private JTextField NameJTextField;
