@@ -8,8 +8,8 @@ public class testBank {
         // Using constructor with values
         Account A1 = new Account("Sanjay Gupta", 11556, 300);
         // Using default constructor
-        Account A2 = new Account();
-        Account A3 = new Account();
+        Account A2 = new Account("He Xai",22338,500);
+        Account A3 = new Account("Ilya Mustafana",44559,1000);
 
         //Set values of Instances created using default constructor
         A2.setAccountName("He Xai");

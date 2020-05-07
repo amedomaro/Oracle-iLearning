@@ -1,19 +1,22 @@
 package programming.section2.javaClassDesignAbstractClasses.JavaBank;
 
-public class CreditAccount extends Account {
+public class CreditAccount extends AbstractBankAccount {
 
     private int creditLimit;
 
-    //default constructor for CreditAccount
-    CreditAccount() {
-        super();
-        this.creditLimit = 100;
-    }
-
-    //overloaded constructor for CreditAccount
     CreditAccount(String name, int num, int amt, int credit) {
         super(name, num, amt);
-        this.creditLimit = credit;
+        this.creditLimit = calculateCreditLimit(amt);
+    } // end constructor
+
+    public void print() {
+        System.out.printf("| %-15s | ID: %-8d | balance: %-8d| creditLimit: %-9d|\n", accountName, accountNum,
+                getBalance(), creditLimit);
+        System.out.println("-----------------------------------------------------------------------------");
+    }
+
+    private static int calculateCreditLimit(int amt){
+        return (amt >= 1 && amt <= 2000) ? 100 : (amt <= 4000) ? 200 : 300;
     }
 
     // Below getters, setters and override
@@ -26,8 +29,22 @@ public class CreditAccount extends Account {
     }
 
     @Override
-    public void print() {
-        System.out.printf("%-15s ID:%-8d balance:%-8d creditLimit:%d\n", getAccountName(), getAccountNum(),
-                getBalance(), creditLimit);
+    protected void deposit(int amt) {
+        balance += amt;
+    }
+
+    @Override
+    protected void withdraw(int amt) {
+
+    }
+
+    @Override
+    protected int getBalance() {
+        return balance;
+    }
+
+    @Override
+    protected String getBankName() {
+        return BANK;
     }
 }

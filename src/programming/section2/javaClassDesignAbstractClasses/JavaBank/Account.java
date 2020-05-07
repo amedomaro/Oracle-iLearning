@@ -1,43 +1,39 @@
 package programming.section2.javaClassDesignAbstractClasses.JavaBank;
 
-public class Account implements InterfaceBankAccount {
+public class Account extends AbstractBankAccount {
 
-    // class variables
-    private String accountName;
-    private int accountNum, balance;
+//    private String accountName;
+//    private int accountNum, balance;
 
-    //default constructor for Account
-    Account() {
-        this.accountName = "EMPTY";
-        this.accountNum = 0;
-        this.balance = 0;
+    private int bonusValue;
+
+    Account(String name, int num, int amt) {
+        super(name, num, (amt + calculateInitialBonusValue(amt)));
     }
 
-    //overloaded constructor for Account
-    Account(String name, int num, int amt) {
-        this.accountName = name;
-        this.accountNum = num;
-        this.balance = amt;
+    private static int calculateInitialBonusValue(int amt) {
+        return (amt >= 1 && amt <= 100) ? 10 : (amt <= 300) ? 20 : 30;
     }
 
     @Override
     public String getBankName() {
-        return InterfaceBankAccount.BANK;
+        return BANK;
     }
 
     //make a deposit to the balance
-    public void deposit(int amt) {
-        balance += amt;
+    protected void deposit(int amt) {
+        balance += (amt > 100) ? (amt + (int) (bonusValue * 0.1)) : amt;
     }
 
     //make a withdrawal from the balance
-    public void withdraw(int amt) {
+    protected void withdraw(int amt) {
         balance -= amt;
     }
 
     //print method
     protected void print() {
-        System.out.printf("%-15s ID:%-8d balance:%-8d\n", accountName, accountNum, balance);
+        System.out.printf("| %-15s | ID: %-8d | balance: %-8d|\t\t\t\t\t\t|\n", accountName, accountNum, balance);
+        System.out.println("-----------------------------------------------------------------------------");
     }
 
     // Below getters and setters
@@ -61,7 +57,7 @@ public class Account implements InterfaceBankAccount {
         return accountNum;
     }
 
-    public int getBalance() {
+    protected int getBalance() {
         return balance;
     }
 }
