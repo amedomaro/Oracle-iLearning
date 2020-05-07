@@ -1,6 +1,6 @@
 package programming.section2.javaClassDesignAbstractClasses.JavaBank;
 
-public class Account {
+public class Account implements InterfaceBankAccount {
 
     // class variables
     private String accountName;
@@ -20,13 +20,18 @@ public class Account {
         this.balance = amt;
     }
 
+    @Override
+    public String getBankName() {
+        return InterfaceBankAccount.BANK;
+    }
+
     //make a deposit to the balance
-    protected void deposit(int amt) {
+    public void deposit(int amt) {
         balance += amt;
     }
 
     //make a withdrawal from the balance
-    protected void withdraw(int amt) {
+    public void withdraw(int amt) {
         balance -= amt;
     }
 
@@ -56,7 +61,7 @@ public class Account {
         return accountNum;
     }
 
-    protected int getBalance() {
+    public int getBalance() {
         return balance;
     }
 }

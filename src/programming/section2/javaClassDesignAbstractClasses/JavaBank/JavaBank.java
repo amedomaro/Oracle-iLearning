@@ -14,12 +14,16 @@ public class JavaBank extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private String name;
+
     private JTextField NameJTextField;
     private JTextField AccountNumJTextField;
     private JTextField BalanceJTextField;
     private JTextField DepositJTextField;
     private JTextField WithdrawJTextField;
     private static JTextArea displayJTextArea;
+
+    CompanyColor companyColor = new CompanyColor();
+    private Color myColor = new Color(companyColor.getR(), companyColor.getG(), companyColor.getB());
 
     // constants
     //public  final static Maximum Accounts that can be created;
@@ -30,7 +34,6 @@ public class JavaBank extends JFrame {
 
     // two-dimensional array to store Account details
     static Account[] myAccounts = new Account[MaxAccounts];
-
     static int noAccounts = 0;
 
     // constructor
@@ -47,8 +50,7 @@ public class JavaBank extends JFrame {
     private void createUserInterface() {
         // get content pane for attaching GUI components
         Container contentPane = getContentPane();
-
-        // enable explicit positioning of GUI components
+        contentPane.setBackground(myColor);
         contentPane.setLayout(null);
 
         // set up inputDetailJPanel
@@ -58,6 +60,8 @@ public class JavaBank extends JFrame {
         inputDetailJPanel.setBorder(new TitledBorder("Input Details"));
         inputDetailJPanel.setLayout(null);
         contentPane.add(inputDetailJPanel);
+
+        inputDetailJPanel.setBackground(myColor);
 
         // set up NameJLabel
         // JLabel and JTextField for account name
