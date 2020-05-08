@@ -4,9 +4,14 @@ public class CreditAccount extends AbstractBankAccount {
 
     private int creditLimit;
 
-    CreditAccount(String name, int num, int amt, int credit) {
+    CreditAccount(String name, int num, int amt){
         super(name, num, amt);
         this.creditLimit = calculateCreditLimit(amt);
+    }
+
+    CreditAccount(String name, int num, int amt, int credit) {
+        super(name, num, amt);
+        this.creditLimit = credit;
     } // end constructor
 
     public void print() {
@@ -46,5 +51,10 @@ public class CreditAccount extends AbstractBankAccount {
     @Override
     protected String getBankName() {
         return BANK;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + String.format("Credit Limit : %d", creditLimit);
     }
 }
