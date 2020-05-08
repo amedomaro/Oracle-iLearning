@@ -304,7 +304,7 @@ public class JavaBankList extends JFrame {
             displayJTextArea.setText("No Accounts currently created");
         } else {
             for (Account account : accounts) {
-                displayJTextArea.append(String.format("%-15s ID:%-8d balance:%-8d\n",account.getAccountName(),
+                displayJTextArea.append(String.format("%-15s ID: %-8d balance: %-8d\n",account.getAccountName(),
                         account.getAccountNum(), account.getBalance()));
             }
         }

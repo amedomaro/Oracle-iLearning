@@ -287,13 +287,13 @@ public class JavaBank extends JFrame {
             for (int i = 0; i < noAccounts; i++) {
                 if ((myAccounts[i].getAccountNum() == AccountNum) && (Deposit > 0)) {
                     myAccounts[i].setBalance(myAccounts[i].getBalance() + Deposit);
-                    displayJTextArea.setText(String.format("%-15s ID:%-8d balance:%-8d\n", myAccounts[i].getAccountName(),
+                    displayJTextArea.setText(String.format("%-15s ID: %-8d balance: %-8d\n", myAccounts[i].getAccountName(),
                             myAccounts[i].getAccountNum(), myAccounts[i].getBalance()));
                 }
 
                 if ((myAccounts[i].getAccountNum() == AccountNum) && (Withdraw > 0)) {
                     myAccounts[i].setBalance(myAccounts[i].getBalance() - Withdraw);
-                    displayJTextArea.setText(String.format("%-15s ID:%-8d balance:%-8d\n", myAccounts[i].getAccountName(),
+                    displayJTextArea.setText(String.format("%-15s ID: %-8d balance: %-8d\n", myAccounts[i].getAccountName(),
                             myAccounts[i].getAccountNum(), myAccounts[i].getBalance()));
                 }
             }
@@ -317,7 +317,7 @@ public class JavaBank extends JFrame {
             displayJTextArea.setText("No Accounts currently created");
         } else {
             for (int i = 0; i < noAccounts; i++) {
-                displayJTextArea.append(String.format("%-15s ID:%-8d balance:%-8d\n", myAccounts[i].getAccountName(),
+                displayJTextArea.append(String.format("%-15s ID: %-8d balance: %-8d\n", myAccounts[i].getAccountName(),
                         myAccounts[i].getAccountNum(), myAccounts[i].getBalance()));
             }
         }
