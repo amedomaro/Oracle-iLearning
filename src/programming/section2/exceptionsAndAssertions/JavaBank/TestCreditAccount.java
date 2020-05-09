@@ -1,6 +1,6 @@
-package programming.section2.javaClassDesignAbstractClasses.JavaBank;
+package programming.section2.exceptionsAndAssertions.JavaBank;
 
-public class testCreditAccount {
+public class TestCreditAccount {
 
 
     public static void main(String[] args) {
