@@ -16,6 +16,8 @@ public class TestCustomerAccounts {
         bankAccount[4] = new CreditAccount("Another", 66778, 1000, 500);
 
         showAllCustomerAccounts(bankAccount);
+        showAllAccounts(bankAccount);
+        showAllCreditAccounts(bankAccount);
     }
 
     public static void showAllCustomerAccounts(AbstractBankAccount[] bankAccount) {
@@ -25,4 +27,21 @@ public class TestCustomerAccounts {
             System.out.println(act);
         }
     } //end method showAllCustomerAccounts
+
+    public static void showAllAccounts(AbstractBankAccount[] bankAccount) {
+        System.out.print("\nAll Account types\n-------------------------------\n");
+
+        for (AbstractBankAccount act : bankAccount)
+            if (act instanceof Account) {
+                System.out.println(act);
+            }
+    }//end method getAllAccounts
+
+    public static void showAllCreditAccounts(AbstractBankAccount[] bankAccount) {
+        System.out.print("\nAll Credit Account types\n-------------------------------\n");
+        for (AbstractBankAccount act : bankAccount)
+            if (act instanceof CreditAccount) {
+                System.out.println(act);
+            }
+    }//end method getAllCreditAccounts
 }
