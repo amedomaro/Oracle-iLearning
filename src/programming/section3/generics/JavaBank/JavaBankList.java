@@ -223,7 +223,7 @@ public class JavaBankList extends JFrame {
 
         if ((!name.equals("")) & (accountNum != 0)) {
             //add a new account to the list using the Account constructor
-            accounts.add(new Account(name, accountNum, balance));
+            accounts.add(new Account(name, accountNum, balance, AccountType.SAVINGS));
             //Set a temp Account for display purposes
             Account tempAccount = accounts.get(accounts.size() - 1);
             //Display tempAccount

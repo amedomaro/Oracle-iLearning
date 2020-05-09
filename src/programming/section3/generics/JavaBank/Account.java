@@ -6,9 +6,11 @@ public class Account extends AbstractBankAccount {
 //    private int accountNum, balance;
 
     private int bonusValue;
+    private AccountType type;
 
-    Account(String name, int num, int amt) {
+    Account(String name, int num, int amt, AccountType type) {
         super(name, num, (amt + calculateInitialBonusValue(amt)));
+        this.type = type;
     }
 
     private static int calculateInitialBonusValue(int amt) {
@@ -34,6 +36,11 @@ public class Account extends AbstractBankAccount {
     protected void print() {
         System.out.printf("| %-15s | ID: %-8d | balance: %-8d|\t\t\t\t\t\t|\n", accountName, accountNum, balance);
         System.out.println("-----------------------------------------------------------------------------");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "AccountType : " + this.type;
     }
 
     // Below getters and setters

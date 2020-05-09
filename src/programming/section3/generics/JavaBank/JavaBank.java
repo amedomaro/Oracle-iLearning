@@ -229,7 +229,7 @@ public class JavaBank extends JFrame {
         //int emptyAccount = 11;
 
         if ((noAccounts <= 9) & (!name.equals("")) & (accountNum != 0)) {
-            myAccounts[noAccounts] = new Account(name, accountNum, balance);
+            myAccounts[noAccounts] = new Account(name, accountNum, balance, AccountType.SAVINGS);
             AccountNames[noAccounts] = "USED";
             //System.out.println(myAccounts[noAccounts].getAccountName());
             //emptyAccount = i;
