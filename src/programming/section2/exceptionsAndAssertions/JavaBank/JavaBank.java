@@ -215,7 +215,7 @@ public class JavaBank extends JFrame {
         if (AccountNumJTextField.getText().equals("0")) {
             accountNum = 0;
         } else {
-            accountNum = Integer.parseInt(AccountNumJTextField.getText());
+            accountNum = Integer.parseInt(NumberCheck.getNumber(AccountNumJTextField.getText()));
         }
 
         //Get Balance from Text Field and convert to int unless blank then set to 0
@@ -223,7 +223,7 @@ public class JavaBank extends JFrame {
         if (BalanceJTextField.getText().equals("0")) {
             balance = 0;
         } else {
-            balance = Integer.parseInt(BalanceJTextField.getText());
+            balance = Integer.parseInt(NumberCheck.getNumber(BalanceJTextField.getText()));
         }
 
         //int emptyAccount = 11;

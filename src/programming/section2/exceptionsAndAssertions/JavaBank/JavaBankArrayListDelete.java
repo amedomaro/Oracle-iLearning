@@ -204,7 +204,7 @@ public class JavaBankArrayListDelete extends JFrame {
         if (AccountNumJTextField.getText().equals("0")) {
             accountNum = 0;
         } else {
-            accountNum = Integer.parseInt(AccountNumJTextField.getText());
+            accountNum = Integer.parseInt(NumberCheck.getNumber(AccountNumJTextField.getText()));
         }
 
         //Get Balance from Text Field and convert to int unless blank then set to 0
@@ -213,7 +213,7 @@ public class JavaBankArrayListDelete extends JFrame {
         if (BalanceJTextField.getText().equals("0")) {
             balance = 0;
         } else {
-            balance = Integer.parseInt(BalanceJTextField.getText());
+            balance = Integer.parseInt(NumberCheck.getNumber(BalanceJTextField.getText()));
         }
 
         if ((!name.equals("")) & (accountNum != 0)) {
