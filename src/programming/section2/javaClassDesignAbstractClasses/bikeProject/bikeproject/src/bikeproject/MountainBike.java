@@ -1,4 +1,4 @@
-package programming.section3.generics.bikeproject.bikeproject.src.bikeproject;
+package programming.section2.javaClassDesignAbstractClasses.bikeProject.bikeproject.src.bikeproject;
 
 public class MountainBike extends Bike implements MountainParts{
 
@@ -41,7 +41,7 @@ public class MountainBike extends Bike implements MountainParts{
 
 	@Override
 	public String toString(){
-		return String.format("\n%s\nThis mountain bike is a %s bike and has a %s suspension and a frame size of %d inches.",
-				MAKE, type, suspension, frameSize) + "\nThis bike is best for " + TERRAIN;
+		return String.format("This mountain bike is a %s bike and has a %s suspension and a frame size of %d inches.",
+				type, suspension, frameSize);
 	}
 }//end class MountainBike

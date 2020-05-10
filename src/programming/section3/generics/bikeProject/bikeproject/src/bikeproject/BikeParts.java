@@ -1,4 +1,4 @@
-package programming.section3.generics.bikeproject.bikeproject.src.bikeproject;
+package programming.section3.generics.bikeProject.bikeproject.src.bikeproject;
 
 public interface BikeParts {
 

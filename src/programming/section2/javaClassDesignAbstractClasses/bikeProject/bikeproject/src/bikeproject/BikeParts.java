@@ -1,4 +1,4 @@
-package programming.section2.javaClassDesignAbstractClasses.bikeproject.bikeproject.src.bikeproject;
+package programming.section2.javaClassDesignAbstractClasses.bikeProject.bikeproject.src.bikeproject;
 
 public interface BikeParts {
 

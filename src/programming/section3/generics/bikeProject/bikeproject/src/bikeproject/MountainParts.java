@@ -1,8 +1,9 @@
-package programming.section2.javaClassDesignAbstractClasses.bikeproject.bikeproject.src.bikeproject;
+package programming.section3.generics.bikeProject.bikeproject.src.bikeproject;
 
 public interface MountainParts {
 
-    String TERRAIN = "off_road";
+    //String TERRAIN = "off_road";
+    BikeUses TERRAIN = BikeUses.OFF_ROAD;
 
     String getSuspension();
     void setSuspension(String newValue);
