@@ -1,4 +1,4 @@
-package programming.section2.javaClassDesignAbstractClasses.bikeProject.bikeproject.src.bikeproject;
+package programming.section2.javaClassDesignAbstractClasses.bikeProject.bikeProject.src.bikeproject;
 
 public class RoadBike extends Bike implements RoadParts{
 	

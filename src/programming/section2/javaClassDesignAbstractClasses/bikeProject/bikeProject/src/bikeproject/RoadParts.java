@@ -1,9 +1,8 @@
-package programming.section3.generics.bikeProject.bikeproject.src.bikeproject;
+package programming.section2.javaClassDesignAbstractClasses.bikeProject.bikeProject.src.bikeproject;
 
 public interface RoadParts {
 
-    //String TERRAIN = "track_racing";
-    BikeUses TERRAIN = BikeUses.TRACK;
+    String TERRAIN = "track_racing";
 
     int getTyreWidth();
     void setTyreWidth(int newValue);

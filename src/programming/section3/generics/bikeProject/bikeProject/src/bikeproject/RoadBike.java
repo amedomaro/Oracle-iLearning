@@ -1,4 +1,4 @@
-package programming.section3.generics.bikeProject.bikeproject.src.bikeproject;
+package programming.section3.generics.bikeProject.bikeProject.src.bikeproject;
 
 public class RoadBike extends Bike implements RoadParts {
 

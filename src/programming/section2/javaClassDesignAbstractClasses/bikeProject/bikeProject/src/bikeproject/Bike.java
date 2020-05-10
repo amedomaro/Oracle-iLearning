@@ -1,10 +1,9 @@
-package programming.section3.generics.bikeProject.bikeproject.src.bikeproject;
+package programming.section2.javaClassDesignAbstractClasses.bikeProject.bikeProject.src.bikeproject;
 
 public class Bike implements BikeParts {
 
     private String handleBars, frame, tyres, seatType;
     private int numGears;
-    //private final String MAKE;
 
     public Bike() {
     }//end constructor
