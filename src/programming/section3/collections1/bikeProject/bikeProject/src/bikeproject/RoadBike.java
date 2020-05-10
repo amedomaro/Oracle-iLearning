@@ -41,7 +41,7 @@ public class RoadBike extends Bike implements RoadParts {
 
     @Override
     public String toString() {
-        return String.format("\n%s\nThis RoadBike bike has %dmm tyres and a post height of %d.",MAKE, tyreWidth, postHeight)
+        return String.format("\n%s\nThis road bike has %dmm tyres and a post height of %d.",MAKE, tyreWidth, postHeight)
                 + "\nThis bike is best for " + TERRAIN;
     }
 }//end class RoadBike
