@@ -41,7 +41,7 @@ public class MountainBike extends Bike implements MountainParts{
 
 	@Override
 	public String toString(){
-		return String.format("This mountain bike is a %s bike and has a %s suspension and a frame size of %d inches.",
-				type, suspension, frameSize) + "\nThis bike is best for " + TERRAIN;
+		return String.format("\n%s\nThis mountain bike is a %s bike and has a %s suspension and a frame size of %d inches.",
+				MAKE, type, suspension, frameSize) + "\nThis bike is best for " + TERRAIN;
 	}
 }//end class MountainBike

@@ -4,10 +4,9 @@ public class Bike implements BikeParts {
 
     private String handleBars, frame, tyres, seatType;
     private int numGears;
-    private final String make;
+    //private final String MAKE;
 
     public Bike() {
-        this.make = "Oracle Cycles";
     }//end constructor
 
     public Bike(String handleBars, String frame, String tyres, String seatType, int numGears) {
@@ -16,7 +15,6 @@ public class Bike implements BikeParts {
         this.tyres = tyres;
         this.seatType = seatType;
         this.numGears = numGears;
-        this.make = "Oracle Cycles";
     }//end constructor
 
     @Override
@@ -53,7 +51,7 @@ public class Bike implements BikeParts {
     @Override
     public String toString() {
         return String.format("%s \nThis bike has %s handlebars on a %s frame with %d gears.\nIt has a %s seat with %s tyres.",
-                make, handleBars, frame, numGears, seatType, tyres);
+                MAKE, handleBars, frame, numGears, seatType, tyres);
     }
 }//end class Bike
 	
