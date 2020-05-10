@@ -2,6 +2,8 @@ package programming.section3.collections1.JavaBank;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -36,7 +38,8 @@ public class JavaBank extends JFrame {
     static String[] accountNames = new String[MAX_ACCOUNTS];
 
     // two-dimensional array to store Account details
-    static AbstractBankAccount[] myAccounts = new AbstractBankAccount[MAX_ACCOUNTS];
+    //static AbstractBankAccount[] myAccounts = new AbstractBankAccount[MAX_ACCOUNTS];
+    static List<AbstractBankAccount> myAccounts = new ArrayList<>();
     static int noAccounts = 0;
 
     // constructor
@@ -241,12 +244,13 @@ public class JavaBank extends JFrame {
         if ((noAccounts <= 9) & (!name.equals("")) & (accountNum != 0)) {
 
             if (actType.equals(AccountType.CREDIT)) {
-                myAccounts[noAccounts] = new CreditAccount(name, accountNum, balance);
+                myAccounts.add(new CreditAccount(name, accountNum, balance));
                 actType = AccountType.SAVINGS;
             } else {
-                myAccounts[noAccounts] = new Account(name, accountNum, balance, actType);
-                displayJTextArea.setText(String.format("%-15s ID:%-8d balance:%-8d\n", myAccounts[noAccounts].getAccountName(),
-                        myAccounts[noAccounts].getAccountNum(), myAccounts[noAccounts].getBalance()));
+                myAccounts.add(new Account(name, accountNum, balance, actType));
+                displayJTextArea.setText(String.format("%-15s ID:%-8d balance:%-8d\n",
+                        myAccounts.get(noAccounts).getAccountName(), myAccounts.get(noAccounts).getAccountNum(),
+                        myAccounts.get(noAccounts).getBalance()));
                 noAccounts++;
                 System.out.println(noAccounts);
             }
@@ -299,16 +303,18 @@ public class JavaBank extends JFrame {
             int Withdraw = Integer.parseInt(WithdrawJTextField.getText());
 
             for (int i = 0; i < noAccounts; i++) {
-                if ((myAccounts[i].getAccountNum() == AccountNum) && (Deposit > 0)) {
-                    myAccounts[i].setBalance(myAccounts[i].getBalance() + Deposit);
-                    displayJTextArea.setText(String.format("%-15s ID: %-8d balance: %-8d\n", myAccounts[i].getAccountName(),
-                            myAccounts[i].getAccountNum(), myAccounts[i].getBalance()));
+                if ((myAccounts.get(i).getAccountNum() == AccountNum) && (Deposit > 0)) {
+                    myAccounts.get(i).setBalance(myAccounts.get(i).getBalance() + Deposit);
+                    displayJTextArea.setText(String.format("%-15s ID: %-8d balance: %-8d\n",
+                            myAccounts.get(i).getAccountName(), myAccounts.get(i).getAccountNum(),
+                            myAccounts.get(i).getBalance()));
                 }
 
-                if ((myAccounts[i].getAccountNum() == AccountNum) && (Withdraw > 0)) {
-                    myAccounts[i].setBalance(myAccounts[i].getBalance() - Withdraw);
-                    displayJTextArea.setText(String.format("%-15s ID: %-8d balance: %-8d\n", myAccounts[i].getAccountName(),
-                            myAccounts[i].getAccountNum(), myAccounts[i].getBalance()));
+                if ((myAccounts.get(i).getAccountNum() == AccountNum) && (Withdraw > 0)) {
+                    myAccounts.get(i).setBalance(myAccounts.get(i).getBalance() - Withdraw);
+                    displayJTextArea.setText(String.format("%-15s ID: %-8d balance: %-8d\n",
+                            myAccounts.get(i).getAccountName(), myAccounts.get(i).getAccountNum(),
+                            myAccounts.get(i).getBalance()));
                 }
             }
         }
@@ -331,8 +337,8 @@ public class JavaBank extends JFrame {
             displayJTextArea.setText("No Accounts currently created");
         } else {
             for (int i = 0; i < noAccounts; i++) {
-                displayJTextArea.append(String.format("%-15s ID: %-8d balance: %-8d\n", myAccounts[i].getAccountName(),
-                        myAccounts[i].getAccountNum(), myAccounts[i].getBalance()));
+                displayJTextArea.append(String.format("%-15s ID: %-8d balance: %-8d\n", myAccounts.get(i).getAccountName(),
+                        myAccounts.get(i).getAccountNum(), myAccounts.get(i).getBalance()));
             }
         }
 
