@@ -25,21 +25,24 @@ public class JavaBank extends JFrame {
     CompanyColor companyColor = new CompanyColor();
     private Color myColor = new Color(companyColor.getR(), companyColor.getG(), companyColor.getB());
 
+    private JComboBox<AccountType> accountTypes;
+    private AccountType actType = AccountType.SAVINGS;
+
     // constants
     //public  final static Maximum Accounts that can be created;
-    public final static int MaxAccounts = 10;
+    public final static int MAX_ACCOUNTS = 10;
 
     // one-dimensional array to store Account names as Empty or Used
-    static String[] AccountNames = new String[MaxAccounts];
+    static String[] accountNames = new String[MAX_ACCOUNTS];
 
     // two-dimensional array to store Account details
-    static Account[] myAccounts = new Account[MaxAccounts];
+    static AbstractBankAccount[] myAccounts = new AbstractBankAccount[MAX_ACCOUNTS];
     static int noAccounts = 0;
 
     // constructor
     public JavaBank() {
         for (int i = 0; i < 10; i++) {
-            AccountNames[i] = "EMPTY";
+            accountNames[i] = "EMPTY";
             //System.out.println(AccountNames[i]);
         }
         createUserInterface();
@@ -56,7 +59,7 @@ public class JavaBank extends JFrame {
         // set up inputDetailJPanel
         // JPanel for user inputs
         JPanel inputDetailJPanel = new JPanel();
-        inputDetailJPanel.setBounds(16, 16, 208, 250);
+        inputDetailJPanel.setBounds(16, 16, 208, 280);
         inputDetailJPanel.setBorder(new TitledBorder("Input Details"));
         inputDetailJPanel.setLayout(null);
         contentPane.add(inputDetailJPanel);
@@ -175,6 +178,16 @@ public class JavaBank extends JFrame {
         displayJButton.addActionListener(event -> DisplayJButtonActionPerformed(event));
         // end call to addActionListener
 
+        // set up accountTypes combo box
+        accountTypes = new JComboBox<AccountType>(AccountType.values());
+        accountTypes.setBounds(16, 238, 176, 24);
+        inputDetailJPanel.add(accountTypes);
+
+        accountTypes.addActionListener(event -> {
+                    actType = (AccountType) accountTypes.getSelectedItem();
+                }//end ActionListener
+        ); // end call to addActionListener
+
         // set up displayJLabel
         // JLabel and JTextArea to display account details
         JLabel displayJLabel = new JLabel();
@@ -185,7 +198,7 @@ public class JavaBank extends JFrame {
         // set up displayJTextArea
         displayJTextArea = new JTextArea();
         JScrollPane scrollPane = new JScrollPane(displayJTextArea);
-        scrollPane.setBounds(240, 48, 402, 184);
+        scrollPane.setBounds(240, 48, 402, 245);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         contentPane.add(scrollPane);
         displayJTextArea.setText("Welcome to Java Bank - There are currently no Accounts created");
@@ -199,7 +212,7 @@ public class JavaBank extends JFrame {
 
         // set properties of application's window
         setTitle("Java Bank"); // set title bar string
-        setSize(670, 308); // set window size
+        setSize(670, 340); // set window siz
         setVisible(true); // display window
 
     } // end method createUserInterface
@@ -229,15 +242,19 @@ public class JavaBank extends JFrame {
         //int emptyAccount = 11;
 
         if ((noAccounts <= 9) & (!name.equals("")) & (accountNum != 0)) {
-            myAccounts[noAccounts] = new Account(name, accountNum, balance, AccountType.SAVINGS);
-            AccountNames[noAccounts] = "USED";
-            //System.out.println(myAccounts[noAccounts].getAccountName());
-            //emptyAccount = i;
 
-            displayJTextArea.setText(String.format("%-15s ID:%-8d balance:%-8d\n", myAccounts[noAccounts].getAccountName(),
-                    myAccounts[noAccounts].getAccountNum(), myAccounts[noAccounts].getBalance()));
-            noAccounts++;
-            System.out.println(noAccounts);
+            if (actType.equals(AccountType.CREDIT)) {
+                myAccounts[noAccounts] = new CreditAccount(name, accountNum, balance);
+                actType = AccountType.SAVINGS;
+            } else {
+                myAccounts[noAccounts] = new Account(name, accountNum, balance, actType);
+                displayJTextArea.setText(String.format("%-15s ID:%-8d balance:%-8d\n", myAccounts[noAccounts].getAccountName(),
+                        myAccounts[noAccounts].getAccountNum(), myAccounts[noAccounts].getBalance()));
+                noAccounts++;
+                System.out.println(noAccounts);
+            }
+            accountNames[noAccounts] = "USED";
+
         } else {
             displayJTextArea.setText("Both the Name field and Account Number must be completed");
         }

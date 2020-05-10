@@ -3,8 +3,8 @@ package programming.section3.generics.JavaBank;
 public abstract class AbstractBankAccount {
     protected final String BANK = "JavaBank";
 
-    protected String accountName;
-    protected int accountNum;
+    private String accountName;
+    private int accountNum;
     protected int balance;
 
     AbstractBankAccount(String name, int num, int amt) {
@@ -17,12 +17,37 @@ public abstract class AbstractBankAccount {
 
     protected abstract void withdraw(int amt);
 
-    protected abstract int getBalance();
 
-    protected abstract String getBankName();
+    protected int getBalance() {
+        return balance;
+    }
+
+    protected void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    protected String getAccountName() {
+        return accountName;
+    }
+
+    protected void setAccountName(String accountName){
+        this.accountName = accountName;
+    }
+
+    protected int getAccountNum() {
+        return accountNum;
+    }
+
+    protected void setAccountNum(int accountNum){
+        this.accountNum = accountNum;
+    }
+
+    protected String getBankName() {
+        return BANK;
+    }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.format("%-15s ID: %-8d balance: %-8d", accountName, accountNum, balance);
     }
 

@@ -15,7 +15,7 @@ public class CreditAccount extends AbstractBankAccount {
     } // end constructor
 
     public void print() {
-        System.out.printf("| %-15s | ID: %-8d | balance: %-8d| creditLimit: %-9d|\n", accountName, accountNum,
+        System.out.printf("| %-15s | ID: %-8d | balance: %-8d| creditLimit: %-9d|\n", getAccountName(), getAccountNum(),
                 getBalance(), creditLimit);
         System.out.println("-----------------------------------------------------------------------------");
     }

@@ -34,37 +34,12 @@ public class Account extends AbstractBankAccount {
 
     //print method
     protected void print() {
-        System.out.printf("| %-15s | ID: %-8d | balance: %-8d|\t\t\t\t\t\t|\n", accountName, accountNum, balance);
+        System.out.printf("| %-15s | ID: %-8d | balance: %-8d|\t\t\t\t\t\t|\n", getAccountName(), getAccountNum(), balance);
         System.out.println("-----------------------------------------------------------------------------");
     }
 
     @Override
     public String toString() {
         return super.toString() + "AccountType : " + this.type;
-    }
-
-    // Below getters and setters
-    protected void setAccountName(String name) {
-        this.accountName = name;
-    }
-
-    protected void setAccountNum(int num) {
-        this.accountNum = num;
-    }
-
-    protected void setBalance(int num) {
-        this.balance = num;
-    }
-
-    protected String getAccountName() {
-        return accountName;
-    }
-
-    protected int getAccountNum() {
-        return accountNum;
-    }
-
-    protected int getBalance() {
-        return balance;
     }
 }
