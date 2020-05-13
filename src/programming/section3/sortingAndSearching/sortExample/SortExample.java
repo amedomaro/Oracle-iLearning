@@ -33,14 +33,15 @@ public class SortExample {
         }
     }
 
-    protected void sequentialSearch(int[] arr, int value) {
+    protected int sequentialSearch(int[] arr, int value) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == value) {
                 System.out.printf("The number %d is at position %d in the list\n", value, i);
-                return;
+                return i;
             }
         }
         System.out.printf("The number %d is not in the list\n", value);
+        return -1;
     }
 
     protected void displayValues(int[] arr) {
