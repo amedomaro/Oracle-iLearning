@@ -2,50 +2,47 @@ package programming.section4.stringExample.accountGenerator;
 
 public class Employee {
     private String name, userName, email, password;
+    private StringBuilder sb = new StringBuilder();
 
     public Employee() {
         this.name = setName();
-//        userName = setUserName(name);
-//        email = setEmail(userName);
-//        password = setPassword(userName);
+        userName = setUserName(name);
+        email = setEmail(userName);
+        password = setPassword(userName);
     }//end constructor
-
-    // Bellow getters, setters and @Override
-    protected String getName() {
-        return name;
-    }
 
     private String setName() {
         return InputValue.getValue();
     }
 
-    protected String getUserName() {
-        return userName;
+    private String setUserName(String username) {
+        return name.toLowerCase().replaceAll("\\s", "\\.");
     }
 
-    private void setUserName(String username) {
-        this.userName = username;
+    private String setEmail(String email) {
+        return sb.append(userName.charAt(0)).append(userName.substring(userName.indexOf(".")))
+                .append("@oracleAcademy.Test").toString();
     }
 
-    protected String getEmail() {
-        return email;
-    }
+    private String setPassword(String password) {
+        sb.delete(0, sb.length());
 
-    private void setEmail(String email) {
-        this.email = email;
-    }
+        if (userName.length() >= 8) {
+            sb.append(userName.substring(0, 1).toUpperCase()).append(userName, 1, 8);
+        } else {
+            sb.append(userName.substring(0, 1).toUpperCase()).append(userName.substring(1));
 
-    protected String getPassword() {
-        return password;
-    }
+            while (sb.length() != 8) {
+                sb.append("*");
+            }
+        }
 
-    private void setPassword(String password) {
-        this.password = password;
+        return sb.toString().replaceAll("([aeiouy])", "*");
     }
 
     @Override
     public String toString() {
-        return String.format("Employee Details Name: %-10s\nUsername: %-10s\nEmail: %-10s\n Initial Password: %-10s\n"
+        return String.format("\nEmployee Details\nName:\t\t\t%s\nUsername:\t\t%s\nEmail:\t\t\t%s\nPassword:\t\t%s\n"
                 , name, userName, email, password);
     }
 }

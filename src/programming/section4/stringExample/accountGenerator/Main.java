@@ -8,9 +8,9 @@ public class Main {
 
         Employee employee = new Employee();
 
+        System.out.println(employee.toString());
 
-
-        InputValue.br.close();
+        InputValue.br.close();  // Close thread System.in
 
     }
 }
