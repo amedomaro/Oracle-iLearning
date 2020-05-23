@@ -12,7 +12,8 @@ public class Linear {
     }
 
     public static void main(String[] args) {
+        double d = 5;
 
-        System.out.println(Linear.factorial(5));
+        System.out.printf("Factorial [%.1f] of [%.1f]",Linear.factorial(5), d);
     }
 }
