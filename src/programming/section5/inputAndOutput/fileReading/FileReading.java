@@ -17,7 +17,7 @@ public class FileReading {
 
     private void readFile(List<String> employees) {
         try {
-            fileInput = new BufferedReader(new FileReader("C:/Users/Amedomaro/Oracle-iLearning/src/programming/section5/inputAndOutput/fileReading/employees.txt"));
+            fileInput = new BufferedReader(new FileReader("C:/Users/Amedomaro/Oracle-iLearning/src/programming/section5/inputAndOutput/employees.txt"));
             String line = fileInput.readLine();
 
             while (line != null) {
