@@ -1,11 +1,13 @@
 package programming.section5.inputAndOutput.fileHandling;
 
 import java.io.BufferedReader;
-import java.nio.charset.Charset;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +30,23 @@ public class FileHandling {
                 employees.add(line);
                 line = fileInput.readLine();
             }
-        }catch (Exception e){
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    private void writeFile(List<String> employees){
+        Path path = Paths.get("C:/Users/Amedomaro/Oracle-iLearning/src/programming/section5/inputAndOutput/userName.txt");
+
+        try (BufferedWriter fileOutput = Files.newBufferedWriter(path, StandardCharsets.ISO_8859_1,
+                StandardOpenOption.CREATE, StandardOpenOption.WRITE)){
+
+            for (String element : employees){
+               fileOutput.write(element);
+               fileOutput.newLine();
+            }
+
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
@@ -39,6 +57,7 @@ public class FileHandling {
 
         fh.readFile(employees);
         fh.displayEmployees(employees);
+        fh.writeFile(employees);
     }
 
 }
