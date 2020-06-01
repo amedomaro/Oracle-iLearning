@@ -1,28 +1,37 @@
 package programming.section4.stringExample.accountGenerator;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class AccountGenerator {
 
     private void serializeData(Employee employee) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("employee.ser"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(
+                "C:/Users/Amedomaro/Oracle-iLearning/src/programming/section4/stringExample/accountGenerator/employee.ser"))) {
             oos.writeObject(employee);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    private Object deSerialize(){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(
+                "C:/Users/Amedomaro/Oracle-iLearning/src/programming/section4/stringExample/accountGenerator/employee.ser"))){
+            return ois.readObject();
 
+        } catch (IOException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
     public static void main(String[] args) throws IOException {
         AccountGenerator accountGen = new AccountGenerator();
         Employee employee = new Employee();
 
-        System.out.println(employee.toString());
+
         accountGen.serializeData(employee);
+        System.out.println(accountGen.deSerialize().toString());
 
 
         InputValue.br.close();  // Close thread System.in
