@@ -2,7 +2,7 @@ package programming.section4.stringExample.accountGenerator;
 
 import java.io.IOException;
 
-public class Main {
+public class AccountGenerator {
 
     public static void main(String[] args) throws IOException {
 

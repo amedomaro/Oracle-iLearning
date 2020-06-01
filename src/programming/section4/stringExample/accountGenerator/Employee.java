@@ -1,6 +1,8 @@
 package programming.section4.stringExample.accountGenerator;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
     private String name, userName, email, password;
     private StringBuilder sb = new StringBuilder();
 
