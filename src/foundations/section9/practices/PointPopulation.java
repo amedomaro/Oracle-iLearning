@@ -1,5 +1,10 @@
 package foundations.section9.practices;
 
+/**
+ @author Aleksandr Ilin
+ */
+
+
 public class PointPopulation extends Point{
 
     protected PointPopulation(String text) {

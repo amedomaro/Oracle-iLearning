@@ -1,5 +1,10 @@
 package foundations.section9.practices;
 
+/**
+ @author Aleksandr Ilin
+ */
+
+
 public class PointFriends extends Point {
 
     protected PointFriends(String text) {

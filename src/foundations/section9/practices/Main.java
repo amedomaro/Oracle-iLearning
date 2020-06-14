@@ -1,5 +1,9 @@
 package foundations.section9.practices;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
