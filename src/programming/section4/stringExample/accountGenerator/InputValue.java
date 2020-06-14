@@ -1,5 +1,9 @@
 package programming.section4.stringExample.accountGenerator;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

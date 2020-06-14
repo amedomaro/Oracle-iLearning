@@ -1,5 +1,9 @@
 package programming.section5.inputAndOutput;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

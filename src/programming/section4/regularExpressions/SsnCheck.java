@@ -1,5 +1,9 @@
 package programming.section4.regularExpressions;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.util.Scanner;
 
 public class SsnCheck {

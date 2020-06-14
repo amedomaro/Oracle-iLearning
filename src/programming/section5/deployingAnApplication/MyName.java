@@ -1,5 +1,9 @@
 package programming.section5.deployingAnApplication;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class MyName {
     private String name = "Aleksandr";
 

@@ -1,5 +1,9 @@
 package programming.section4.recursion;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class NonLinear {
 
     public static double fibonacci(double d) {

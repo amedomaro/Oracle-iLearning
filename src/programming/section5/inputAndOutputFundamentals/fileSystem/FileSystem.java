@@ -1,5 +1,9 @@
 package programming.section5.inputAndOutputFundamentals.fileSystem;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.io.BufferedReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
