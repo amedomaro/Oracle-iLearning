@@ -1,5 +1,9 @@
 package foundations.section8.practices;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.io.IOException;
 
 public class Main {

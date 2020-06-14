@@ -4,7 +4,6 @@ package foundations.section9.practices;
  @author Aleksandr Ilin
  */
 
-
 import javafx.scene.image.ImageView;
 
 public class CampusMap {

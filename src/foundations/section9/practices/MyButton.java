@@ -4,7 +4,6 @@ package foundations.section9.practices;
  @author Aleksandr Ilin
  */
 
-
 import javafx.scene.control.Button;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;

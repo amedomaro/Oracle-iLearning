@@ -1,5 +1,9 @@
 package foundations.section8.practices;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
