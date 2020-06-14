@@ -1,5 +1,9 @@
 package programming.section2.exceptionsAndAssertions.JavaBank;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public final class CompanyColor {
 
     protected int getR() {

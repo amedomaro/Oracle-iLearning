@@ -1,5 +1,9 @@
 package programming.section2.exceptionsAndAssertions.JavaBank;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class NumberCheck {
 
     protected  static String getNumber(String input) {

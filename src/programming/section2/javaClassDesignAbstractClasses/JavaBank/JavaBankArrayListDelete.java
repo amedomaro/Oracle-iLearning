@@ -1,5 +1,9 @@
 package programming.section2.javaClassDesignAbstractClasses.JavaBank;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

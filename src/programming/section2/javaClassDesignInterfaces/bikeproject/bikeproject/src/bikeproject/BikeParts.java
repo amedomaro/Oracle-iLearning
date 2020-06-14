@@ -1,5 +1,9 @@
 package programming.section2.javaClassDesignInterfaces.bikeproject.bikeproject.src.bikeproject;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public interface BikeParts {
 
     String MAKE = "Oracle Bikes";

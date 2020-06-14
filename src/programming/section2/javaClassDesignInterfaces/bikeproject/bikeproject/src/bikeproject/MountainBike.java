@@ -1,5 +1,9 @@
 package programming.section2.javaClassDesignInterfaces.bikeproject.bikeproject.src.bikeproject;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class MountainBike extends Bike implements MountainParts{
 
 	private String suspension, type;

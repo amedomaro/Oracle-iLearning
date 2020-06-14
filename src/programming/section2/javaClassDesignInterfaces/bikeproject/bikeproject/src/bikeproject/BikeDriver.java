@@ -1,5 +1,9 @@
 package programming.section2.javaClassDesignInterfaces.bikeproject.bikeproject.src.bikeproject;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class BikeDriver {
 
     public static void main(String[] args) {

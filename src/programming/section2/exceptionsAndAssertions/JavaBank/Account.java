@@ -1,5 +1,9 @@
 package programming.section2.exceptionsAndAssertions.JavaBank;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class Account extends AbstractBankAccount {
 
 //    private String accountName;

@@ -1,5 +1,9 @@
 package programming.section2.workingWithPreWrittenCode.Calculator.src;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JPanel;

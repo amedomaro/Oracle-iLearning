@@ -1,5 +1,9 @@
 package programming.section2.javaClassDesignAbstractClasses.JavaBank;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public abstract class AbstractBankAccount {
     protected final String BANK = "JavaBank";
 

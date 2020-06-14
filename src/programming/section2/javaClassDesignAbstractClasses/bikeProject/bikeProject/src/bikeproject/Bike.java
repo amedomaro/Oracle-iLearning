@@ -1,5 +1,9 @@
 package programming.section2.javaClassDesignAbstractClasses.bikeProject.bikeProject.src.bikeproject;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class Bike implements BikeParts {
 
     private String handleBars, frame, tyres, seatType;
