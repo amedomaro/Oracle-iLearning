@@ -1,5 +1,9 @@
 package programming.section3.sortingAndSearching.sortExample;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,5 +1,9 @@
 package programming.section3.collections2.genericStack;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 

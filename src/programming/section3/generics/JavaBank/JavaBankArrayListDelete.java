@@ -1,5 +1,9 @@
 package programming.section3.generics.JavaBank;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

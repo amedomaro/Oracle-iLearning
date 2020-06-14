@@ -1,5 +1,9 @@
 package programming.section3.collections1.JavaBank;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class Account extends AbstractBankAccount {
 
 //    private String accountName;

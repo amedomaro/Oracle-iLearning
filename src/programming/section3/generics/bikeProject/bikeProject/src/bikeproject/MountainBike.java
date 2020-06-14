@@ -1,5 +1,9 @@
 package programming.section3.generics.bikeProject.bikeProject.src.bikeproject;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class MountainBike extends Bike implements MountainParts{
 
 	private String suspension, type;

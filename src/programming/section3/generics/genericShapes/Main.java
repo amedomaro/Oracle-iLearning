@@ -1,5 +1,9 @@
 package programming.section3.generics.genericShapes;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class Main {
 
     public static void main(String[] args) {

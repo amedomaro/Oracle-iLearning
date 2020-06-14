@@ -1,5 +1,9 @@
 package programming.section3.sortingAndSearching.sortExample;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class SortExample {
 
     private int[] numbers = {40, 7, 59, 4, 1};

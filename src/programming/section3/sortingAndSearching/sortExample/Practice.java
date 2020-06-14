@@ -1,5 +1,8 @@
 package programming.section3.sortingAndSearching.sortExample;
 
+/**
+ @author Aleksandr Ilin
+ */
 
 import java.io.IOException;
 import java.util.Arrays;

@@ -1,5 +1,9 @@
 package programming.section3.collections2.hashSetExample;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.util.HashMap;
 import java.util.Map;
 

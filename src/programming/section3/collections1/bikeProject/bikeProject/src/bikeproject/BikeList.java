@@ -1,5 +1,9 @@
 package programming.section3.collections1.bikeProject.bikeProject.src.bikeproject;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

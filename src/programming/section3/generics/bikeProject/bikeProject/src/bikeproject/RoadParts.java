@@ -1,5 +1,9 @@
 package programming.section3.generics.bikeProject.bikeProject.src.bikeproject;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public interface RoadParts {
 
     //String TERRAIN = "track_racing";

@@ -1,5 +1,9 @@
 package programming.section3.generics.JavaBank;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class TestBank {
 
     public static void main(String[] args) {

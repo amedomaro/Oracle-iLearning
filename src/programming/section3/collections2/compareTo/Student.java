@@ -1,5 +1,9 @@
 package programming.section3.collections2.compareTo;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class Student implements Comparable<Student> {
 
     private String firstName, lastName;

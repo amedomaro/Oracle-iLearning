@@ -1,5 +1,9 @@
 package programming.section3.collections1.bikeProject.bikeProject.src.bikeproject;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class BikeDriver {
 
     public static void main(String[] args) {

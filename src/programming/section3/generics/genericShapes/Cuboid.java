@@ -1,5 +1,9 @@
 package programming.section3.generics.genericShapes;
 
+/**
+ @author Aleksandr Ilin
+ */
+
 public class Cuboid<T extends Number> {
 
     private T length, width, height;
