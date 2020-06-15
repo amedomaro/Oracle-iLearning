@@ -52,7 +52,7 @@ public class Bike implements BikeParts {
 
 
     @Override
-    public String toString() {
+    public String toString() { // Преобразование метода printDescription в переопределённый метод toString
         return String.format("%s \nThis bike has %s handlebars on a %s frame with %d gears.\nIt has a %s seat with %s tyres.",
                 MAKE, handleBars, frame, numGears, seatType, tyres);
     }

@@ -44,7 +44,7 @@ public class MountainBike extends Bike implements MountainParts{
 	}
 
 	@Override
-	public String toString(){
+	public String toString(){  // Преобразование метода printDescription в переопределённый метод toString
 		return String.format("This mountain bike is a %s bike and has a %s suspension and a frame size of %d inches.",
 				type, suspension, frameSize);
 	}

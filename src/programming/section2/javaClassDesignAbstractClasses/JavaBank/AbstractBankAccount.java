@@ -25,7 +25,7 @@ public abstract class AbstractBankAccount {
 
     protected abstract String getBankName();
 
-    @Override
+    @Override  // переопределение метода toString
     public String toString(){
         return String.format("%-15s ID: %-8d balance: %-8d", accountName, accountNum, balance);
     }

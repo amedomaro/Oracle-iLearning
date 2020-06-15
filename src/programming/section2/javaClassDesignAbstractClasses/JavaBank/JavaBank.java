@@ -12,10 +12,6 @@ import javax.swing.border.*;
 
 public class JavaBank extends JFrame {
 
-    /**
-     *
-     */
-
     private static final long serialVersionUID = 1L;
     private String name;
 
@@ -262,12 +258,6 @@ public class JavaBank extends JFrame {
     private void DeleteAccountJButtonActionPerformed(ActionEvent event) {
 
         displayJTextArea.setText("Oops this isn`t coded in this version!");
-        //Name = NameJTextField.getText();
-        //System.out.println("Delete Account: " + Name);
-
-        // Enter code to delete here
-
-        // clear JTextFields for new data
 
         NameJTextField.setText(" ");
         AccountNumJTextField.setText("0");

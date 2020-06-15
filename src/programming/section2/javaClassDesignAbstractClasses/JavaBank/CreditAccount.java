@@ -4,7 +4,7 @@ package programming.section2.javaClassDesignAbstractClasses.JavaBank;
  @author Aleksandr Ilin
  */
 
-public class CreditAccount extends AbstractBankAccount {
+public class CreditAccount extends AbstractBankAccount { // Наследуемся от АбстрактБанкАккаунт
 
     private int creditLimit;
 
@@ -57,7 +57,7 @@ public class CreditAccount extends AbstractBankAccount {
         return BANK;
     }
 
-    @Override
+    @Override  // переопределение метода toString
     public String toString(){
         return super.toString() + String.format("Credit Limit : %d", creditLimit);
     }

@@ -46,7 +46,7 @@ public class RoadBike extends Bike implements RoadParts{
 	}
 
 	@Override
-	public String toString(){
+	public String toString(){  // Преобразование метода printDescription в переопределённый метод toString
 		return String.format("This RoadBike bike has %dmm tyres and a post height of %d.", tyreWidth, postHeight);
 	}
 }//end class RoadBike
