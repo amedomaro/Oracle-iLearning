@@ -26,7 +26,7 @@ public class CalcPanel extends JPanel implements ActionListener {
     JButton bClear = new JButton("C");
     JButton bEquals = new JButton("=");
     JButton bPlus = new JButton("+");
-    JButton bMultiplication = new JButton("*");
+    JButton bMultiplication = new JButton("*");  // Добавление кнопок
     JButton bSubtraction = new JButton("/");
 
     public CalcPanel() {
@@ -44,12 +44,12 @@ public class CalcPanel extends JPanel implements ActionListener {
         b4.setBounds(0, 150, 50, 50);
         b5.setBounds(50, 150, 50, 50);
         b6.setBounds(100, 150, 50, 50);
-        bMultiplication.setBounds(154, 150, 50, 50);
+        bMultiplication.setBounds(154, 150, 50, 50); // Добавление расположения кнопки
 
         b7.setBounds(0, 100, 50, 50);
         b8.setBounds(50, 100, 50, 50);
         b9.setBounds(100, 100, 50, 50);
-        bSubtraction.setBounds(154, 100, 50, 50);
+        bSubtraction.setBounds(154, 100, 50, 50);  // Добавление расположения кнопки
 
         b0.setBounds(0, 250, 50, 50);
         bDec.setBounds(50, 250, 50, 50);
@@ -71,7 +71,7 @@ public class CalcPanel extends JPanel implements ActionListener {
         add(bClear);
         add(bEquals);
         add(bPlus);
-        add(bMultiplication);
+        add(bMultiplication);  // Добавление кнопок
         add(bSubtraction);
 
         b1.addActionListener(this);
@@ -86,7 +86,7 @@ public class CalcPanel extends JPanel implements ActionListener {
         b0.addActionListener(this);
         bEquals.addActionListener(this);
         bPlus.addActionListener(this);
-        bMultiplication.addActionListener(this);
+        bMultiplication.addActionListener(this);  // Добавление кнопок
         bSubtraction.addActionListener(this);
         bClear.addActionListener(this);
         bDec.addActionListener(this);
@@ -115,7 +115,7 @@ public class CalcPanel extends JPanel implements ActionListener {
         }
 
         if (s.equals("*")) {
-            usingFirst = false;
+            usingFirst = false;    // Добавление логики
             operator = "*";
         }
 
@@ -133,7 +133,7 @@ public class CalcPanel extends JPanel implements ActionListener {
                     display.setText("" + total);
                     break;
                 case "*":
-                    total = Double.parseDouble(num1) * Double.parseDouble(num2);
+                    total = Double.parseDouble(num1) * Double.parseDouble(num2);  // Добавление логики
                     display.setText("" + total);
                     break;
                 case "/":
