@@ -4,7 +4,7 @@ package programming.section2.javaClassDesignInterfaces.bikeproject.bikeproject.s
  @author Aleksandr Ilin
  */
 
-public class RoadBike extends Bike implements RoadParts{
+public class RoadBike extends Bike implements RoadParts{  // Реализация интерфейса в классе
 	
 	private int  tyreWidth, postHeight;
 	

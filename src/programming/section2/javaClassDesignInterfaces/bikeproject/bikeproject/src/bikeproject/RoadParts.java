@@ -4,7 +4,7 @@ package programming.section2.javaClassDesignInterfaces.bikeproject.bikeproject.s
  @author Aleksandr Ilin
  */
 
-public interface RoadParts {
+public interface RoadParts {  // Создание интерфейса
 
     String TERRAIN = "track_racing";
 

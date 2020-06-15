@@ -4,7 +4,7 @@ package programming.section2.javaClassDesignInterfaces.bikeproject.bikeproject.s
  @author Aleksandr Ilin
  */
 
-public interface BikeParts {
+public interface BikeParts {  // Создание интерфейса
 
     String MAKE = "Oracle Bikes";
 

@@ -4,7 +4,7 @@ package programming.section2.javaClassDesignInterfaces.bikeproject.bikeproject.s
  @author Aleksandr Ilin
  */
 
-public class MountainBike extends Bike implements MountainParts{
+public class MountainBike extends Bike implements MountainParts{  // Реализация интерфейса в классе
 
 	private String suspension, type;
 	private int frameSize;

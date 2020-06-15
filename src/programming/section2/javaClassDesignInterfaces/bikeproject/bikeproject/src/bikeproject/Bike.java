@@ -4,8 +4,7 @@ package programming.section2.javaClassDesignInterfaces.bikeproject.bikeproject.s
  @author Aleksandr Ilin
  */
 
-public class Bike implements BikeParts {
-
+public class Bike implements BikeParts {  // Реализация интерфейса в классе
 	private String handleBars, frame, tyres, seatType;
 	private int NumGears;
 	private final String make;
