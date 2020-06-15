@@ -29,7 +29,7 @@ public class JavaBank extends JFrame {
     CompanyColor companyColor = new CompanyColor();
     private Color myColor = new Color(companyColor.getR(), companyColor.getG(), companyColor.getB());
 
-    private JComboBox<AccountType> accountTypes;
+    private JComboBox<AccountType> accountTypes;  // Добавление JComboBox с именем accountTypes
     private AccountType actType = AccountType.SAVINGS;
 
     // constants
@@ -183,7 +183,7 @@ public class JavaBank extends JFrame {
         // end call to addActionListener
 
         // set up accountTypes combo box
-        accountTypes = new JComboBox<AccountType>(AccountType.values());
+        accountTypes = new JComboBox<AccountType>(AccountType.values());   // Добавление куска кода
         accountTypes.setBounds(16, 238, 176, 24);
         inputDetailJPanel.add(accountTypes);
 
