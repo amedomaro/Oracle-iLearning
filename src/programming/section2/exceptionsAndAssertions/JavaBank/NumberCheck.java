@@ -6,7 +6,7 @@ package programming.section2.exceptionsAndAssertions.JavaBank;
 
 public class NumberCheck {
 
-    protected  static String getNumber(String input) {
+    protected  static String getNumber(String input) {  // Создал метод проверки корректного ввода
         String result = "0";
 
         try {
