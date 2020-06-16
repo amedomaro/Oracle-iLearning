@@ -6,7 +6,7 @@ package programming.section4.stringExample.accountGenerator;
 
 import java.io.*;
 
-public class AccountGenerator {
+public class AccountGenerator { // создание класса и его заполнение согласно условиям задачи
 
     private void serializeData(Employee employee) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(

@@ -8,10 +8,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class InputValue {
+public class InputValue { // создание
     public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    protected static String getValue() {
+    protected static String getValue() { // создание метода для проверки корректности введённых значений
         String str;
 
         while (true) {

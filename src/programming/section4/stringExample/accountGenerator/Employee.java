@@ -6,7 +6,7 @@ package programming.section4.stringExample.accountGenerator;
 
 import java.io.Serializable;
 
-public class Employee implements Serializable {
+public class Employee implements Serializable {  // создание класса и его заполнение согласно условиям задачи
     private String name, userName, email, password;
     private StringBuilder sb = new StringBuilder();
 
