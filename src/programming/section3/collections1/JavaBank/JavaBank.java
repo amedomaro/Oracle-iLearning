@@ -43,7 +43,7 @@ public class JavaBank extends JFrame {
 
     // two-dimensional array to store Account details
     //static AbstractBankAccount[] myAccounts = new AbstractBankAccount[MAX_ACCOUNTS];
-    static List<AbstractBankAccount> myAccounts = new ArrayList<>();
+    static List<AbstractBankAccount> myAccounts = new ArrayList<>();  // Заменил массив на список.
     static int noAccounts = 0;
 
     // constructor
@@ -248,13 +248,13 @@ public class JavaBank extends JFrame {
         if ((noAccounts <= 9) & (!name.equals("")) & (accountNum != 0)) {
 
             if (actType.equals(AccountType.CREDIT)) {
-                myAccounts.add(new CreditAccount(name, accountNum, balance));
+                myAccounts.add(new CreditAccount(name, accountNum, balance)); // исправление ошибки
                 actType = AccountType.SAVINGS;
             } else {
-                myAccounts.add(new Account(name, accountNum, balance, actType));
+                myAccounts.add(new Account(name, accountNum, balance, actType));  // исправление ошибки
                 displayJTextArea.setText(String.format("%-15s ID:%-8d balance:%-8d\n",
                         myAccounts.get(noAccounts).getAccountName(), myAccounts.get(noAccounts).getAccountNum(),
-                        myAccounts.get(noAccounts).getBalance()));
+                        myAccounts.get(noAccounts).getBalance()));  // исправление ошибки
                 noAccounts++;
                 System.out.println(noAccounts);
             }
@@ -307,18 +307,18 @@ public class JavaBank extends JFrame {
             int Withdraw = Integer.parseInt(WithdrawJTextField.getText());
 
             for (int i = 0; i < noAccounts; i++) {
-                if ((myAccounts.get(i).getAccountNum() == AccountNum) && (Deposit > 0)) {
-                    myAccounts.get(i).setBalance(myAccounts.get(i).getBalance() + Deposit);
+                if ((myAccounts.get(i).getAccountNum() == AccountNum) && (Deposit > 0)) { // исправление ошибки
+                    myAccounts.get(i).setBalance(myAccounts.get(i).getBalance() + Deposit); // исправление ошибки
                     displayJTextArea.setText(String.format("%-15s ID: %-8d balance: %-8d\n",
-                            myAccounts.get(i).getAccountName(), myAccounts.get(i).getAccountNum(),
-                            myAccounts.get(i).getBalance()));
+                            myAccounts.get(i).getAccountName(), myAccounts.get(i).getAccountNum(), // исправление ошибки
+                            myAccounts.get(i).getBalance())); // исправление ошибки
                 }
 
-                if ((myAccounts.get(i).getAccountNum() == AccountNum) && (Withdraw > 0)) {
-                    myAccounts.get(i).setBalance(myAccounts.get(i).getBalance() - Withdraw);
+                if ((myAccounts.get(i).getAccountNum() == AccountNum) && (Withdraw > 0)) {  // исправление ошибки
+                    myAccounts.get(i).setBalance(myAccounts.get(i).getBalance() - Withdraw);  // исправление ошибки
                     displayJTextArea.setText(String.format("%-15s ID: %-8d balance: %-8d\n",
-                            myAccounts.get(i).getAccountName(), myAccounts.get(i).getAccountNum(),
-                            myAccounts.get(i).getBalance()));
+                            myAccounts.get(i).getAccountName(), myAccounts.get(i).getAccountNum(), // исправление ошибки
+                            myAccounts.get(i).getBalance())); // исправление ошибки
                 }
             }
         }
@@ -342,7 +342,7 @@ public class JavaBank extends JFrame {
         } else {
             for (int i = 0; i < noAccounts; i++) {
                 displayJTextArea.append(String.format("%-15s ID: %-8d balance: %-8d\n", myAccounts.get(i).getAccountName(),
-                        myAccounts.get(i).getAccountNum(), myAccounts.get(i).getBalance()));
+                        myAccounts.get(i).getAccountNum(), myAccounts.get(i).getBalance())); // исправление ошибки
             }
         }
 
