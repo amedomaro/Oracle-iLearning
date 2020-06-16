@@ -9,17 +9,17 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Practice {
-    private int[] numbers = new int[100];
+    private int[] numbers = new int[50];
     private Random random = new Random();
 
-    protected int[] fillArray(int[] arr) {
-        arr = Arrays.stream(arr).map(i -> random.nextInt(50)).toArray();
+    protected int[] fillArray(int[] arr) {  // Метод который заполняет массив случайными числами от 0 до 100
+        arr = Arrays.stream(arr).map(i -> random.nextInt(100)).toArray();
         System.out.println("Unordered list:");
         displayValues(arr);
         return arr;
     }
 
-    protected void displayValues(int[] arr) {
+    protected void displayValues(int[] arr) {  // вывод массива
         for (int i : arr) {
             System.out.printf("%d ", i);
         }
