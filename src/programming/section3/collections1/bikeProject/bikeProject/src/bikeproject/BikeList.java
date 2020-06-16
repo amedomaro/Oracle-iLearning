@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BikeList {
+public class BikeList {  // создание класса и его заполнение согласно заданию
 
 //    private int mountainBikeSales = 0;
 //    private int roadBikeSales = 0;
