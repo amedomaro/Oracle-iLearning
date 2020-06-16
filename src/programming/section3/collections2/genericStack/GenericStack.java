@@ -7,7 +7,7 @@ package programming.section3.collections2.genericStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenericStack<T> {
+public class GenericStack<T> {  // создание класса и его заполнение согласно условиям задачи
 
     private List<T> items = new ArrayList<>();
     private int top;
